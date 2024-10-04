@@ -99,6 +99,28 @@
     "DOMVAL_LD":"",
     "DOMVAL_HD":"",
     "DOMVALUE_L":"N"
+   },
+   {
+    "DOMNAME":"ZETR_D_TBSNT",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":1,
+    "AS4VERS":0,
+    "DDTEXT":"Evet",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"X"
+   },
+   {
+    "DOMNAME":"ZETR_D_TBSNT",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":2,
+    "AS4VERS":0,
+    "DDTEXT":"Hayır",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"N"
    }
   ]
  },

@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Fin.p.end",
     "SCRTEXT_M":"Financial period end",
     "SCRTEXT_L":"Financial period end date"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_MLYL_DNM_BIT",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Dönem bitişi",
+    "REPTEXT":"Dönem bitişi",
+    "SCRTEXT_S":"Dönem bit",
+    "SCRTEXT_M":"Dönem bitişi",
+    "SCRTEXT_L":"Dönem bitişi"
    }
   ]
  },

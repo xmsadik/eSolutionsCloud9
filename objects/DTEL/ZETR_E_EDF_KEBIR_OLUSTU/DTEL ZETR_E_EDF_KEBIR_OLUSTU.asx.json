@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kebir Oluş",
     "SCRTEXT_M":"Kebir Oluştu",
     "SCRTEXT_L":"Kebir Oluştu"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_KEBIR_OLUSTU",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kebir Oluştu",
+    "REPTEXT":"Kebir Oluştu",
+    "SCRTEXT_S":"Kebir Oluş",
+    "SCRTEXT_M":"Kebir Oluştu",
+    "SCRTEXT_L":"Kebir Oluştu"
    }
   ]
  },

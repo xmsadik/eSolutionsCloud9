@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kopya GIB",
     "SCRTEXT_M":"Kopya GIB Kebir Ber.",
     "SCRTEXT_L":"Kopya GIB Kebir Beratı Yükleme"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_IGGKK",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kopya GIB Kebir Beratı Yükleme",
+    "REPTEXT":"Kopya GIB Kebir Beratı Yükleme",
+    "SCRTEXT_S":"Kopya GIB",
+    "SCRTEXT_M":"Kopya GIB Kebir Ber.",
+    "SCRTEXT_L":"Kopya GIB Kebir Beratı Yükleme"
    }
   ]
  },

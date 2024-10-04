@@ -208,6 +208,27 @@
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
     "TEXT":"Ledger Totals"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_TOT",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TITLE.LABEL",
+    "TEXT":"Defter Toplamları"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_TOT",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TYPENAME",
+    "TEXT":"Defter Toplamları"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_TOT",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
+    "TEXT":"Defter Toplamları"
    }
   ]
  },

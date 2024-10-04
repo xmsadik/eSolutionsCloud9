@@ -8,6 +8,7 @@ authorization master ( instance )
 //etag master <field_name>
 {
   field ( readonly : update ) docui;
+  action ( features : instance ) deleteDocuments result [1] $self;
   //  create;
   //  update;
 //    delete;

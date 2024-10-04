@@ -404,6 +404,27 @@
     "ELEMENT":"",
     "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
     "TEXT":"Ledger Parts"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_PART",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TITLE.LABEL",
+    "TEXT":"Defter Parçaları"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_PART",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TYPENAME",
+    "TEXT":"Defter Parçaları"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_CREATED_LEDGER_PART",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"",
+    "NAME":"UI.HEADERINFO.TYPENAMEPLURAL",
+    "TEXT":"Defter Parçaları"
    }
   ]
  },

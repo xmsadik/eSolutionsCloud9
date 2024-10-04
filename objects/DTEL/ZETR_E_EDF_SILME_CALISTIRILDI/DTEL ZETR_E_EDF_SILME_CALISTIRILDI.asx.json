@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Silme Çalı",
     "SCRTEXT_M":"Silme Çalıştırıldı",
     "SCRTEXT_L":"Silme Çalıştırıldı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_SILME_CALISTIRILDI",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Silme Çalıştırıldı",
+    "REPTEXT":"Silme Çalıştırıldı",
+    "SCRTEXT_S":"Silme Çalı",
+    "SCRTEXT_M":"Silme Çalıştırıldı",
+    "SCRTEXT_L":"Silme Çalıştırıldı"
    }
   ]
  },

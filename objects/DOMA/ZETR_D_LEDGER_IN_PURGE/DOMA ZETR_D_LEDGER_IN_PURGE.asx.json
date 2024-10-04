@@ -119,6 +119,39 @@
     "DOMVAL_LD":"",
     "DOMVAL_HD":"",
     "DOMVALUE_L":"X"
+   },
+   {
+    "DOMNAME":"ZETR_D_LEDGER_IN_PURGE",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":1,
+    "AS4VERS":0,
+    "DDTEXT":"Tasfiye Öncesi",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"F"
+   },
+   {
+    "DOMNAME":"ZETR_D_LEDGER_IN_PURGE",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":2,
+    "AS4VERS":0,
+    "DDTEXT":"Tasfiye Sonrası",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"L"
+   },
+   {
+    "DOMNAME":"ZETR_D_LEDGER_IN_PURGE",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":3,
+    "AS4VERS":0,
+    "DDTEXT":"Tasfiye Halindeki",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"X"
    }
   ]
  },

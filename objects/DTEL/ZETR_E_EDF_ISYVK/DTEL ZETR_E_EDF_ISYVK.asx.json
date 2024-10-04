@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kopya Yevm",
     "SCRTEXT_M":"Kopya Yevmiye Kuy.At",
     "SCRTEXT_L":"Kopya Yevmiye Kuyruğa Atıldı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_ISYVK",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kopya Yevmiye Kuyruğa Atıldı",
+    "REPTEXT":"Kopya Yevmiye Kuyruğa Atıldı",
+    "SCRTEXT_S":"Kopya Yevm",
+    "SCRTEXT_M":"Kopya Yevmiye Kuy.At",
+    "SCRTEXT_L":"Kopya Yevmiye Kuyruğa Atıldı"
    }
   ]
  },

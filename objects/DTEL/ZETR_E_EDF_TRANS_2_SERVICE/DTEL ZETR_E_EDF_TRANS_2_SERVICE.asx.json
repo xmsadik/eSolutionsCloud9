@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Trans.serv",
     "SCRTEXT_M":"Transferred to serv.",
     "SCRTEXT_L":"Transferred to service"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_TRANS_2_SERVICE",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Servise gönderildi",
+    "REPTEXT":"Servise gönderildi",
+    "SCRTEXT_S":"Servise gö",
+    "SCRTEXT_M":"Servise gönderildi",
+    "SCRTEXT_L":"Servise gönderildi"
    }
   ]
  },

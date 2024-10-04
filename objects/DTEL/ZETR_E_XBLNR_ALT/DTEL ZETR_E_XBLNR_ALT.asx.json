@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Alt.ref.",
     "SCRTEXT_M":"Alt.reference",
     "SCRTEXT_L":"Alternative reference"
+   },
+   {
+    "ROLLNAME":"ZETR_E_XBLNR_ALT",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Alternatif referans",
+    "REPTEXT":"Alternatif referans",
+    "SCRTEXT_S":"Alt.ref.",
+    "SCRTEXT_M":"Alt.referans",
+    "SCRTEXT_L":"Alternatif referans"
    }
   ]
  },

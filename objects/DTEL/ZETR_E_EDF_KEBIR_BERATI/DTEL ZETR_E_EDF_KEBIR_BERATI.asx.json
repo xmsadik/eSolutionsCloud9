@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kebir Ber.",
     "SCRTEXT_M":"Kebir Beratı",
     "SCRTEXT_L":"Kebir Beratı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_KEBIR_BERATI",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kebir Beratı",
+    "REPTEXT":"Kebir Beratı",
+    "SCRTEXT_S":"Kebir Ber.",
+    "SCRTEXT_M":"Kebir Beratı",
+    "SCRTEXT_L":"Kebir Beratı"
    }
   ]
  },

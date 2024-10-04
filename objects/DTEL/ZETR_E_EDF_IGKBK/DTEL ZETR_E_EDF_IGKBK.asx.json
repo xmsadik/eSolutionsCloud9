@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kopya Keb.",
     "SCRTEXT_M":"Kopya Kebir Yüklemes",
     "SCRTEXT_L":"Kopya Kebir Yüklemesi"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_IGKBK",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kopya Kebir Yüklemesi",
+    "REPTEXT":"Kopya Kebir Yüklemesi",
+    "SCRTEXT_S":"Kopya Keb.",
+    "SCRTEXT_M":"Kopya Kebir Yüklemes",
+    "SCRTEXT_L":"Kopya Kebir Yüklemesi"
    }
   ]
  },

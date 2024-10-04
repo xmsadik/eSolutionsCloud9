@@ -60,6 +60,17 @@
     "SCRTEXT_S":"End.Item",
     "SCRTEXT_M":"End.Item No",
     "SCRTEXT_L":"End.Item No"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_END_ITEM_NO",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Bit.Klm.No",
+    "REPTEXT":"Bit.Klm.No",
+    "SCRTEXT_S":"Bit.Klm.No",
+    "SCRTEXT_M":"Bit.Klm.No",
+    "SCRTEXT_L":"Bit.Klm.No"
    }
   ]
  },

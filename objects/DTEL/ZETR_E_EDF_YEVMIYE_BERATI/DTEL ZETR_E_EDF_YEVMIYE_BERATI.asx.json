@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Yev.Beratı",
     "SCRTEXT_M":"Yevmiye Beratı",
     "SCRTEXT_L":"Yevmiye Beratı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_YEVMIYE_BERATI",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Yevmiye Beratı",
+    "REPTEXT":"Yevmiye Beratı",
+    "SCRTEXT_S":"Yev.Beratı",
+    "SCRTEXT_M":"Yevmiye Beratı",
+    "SCRTEXT_L":"Yevmiye Beratı"
    }
   ]
  },

@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kopya GIB",
     "SCRTEXT_M":"Kopya GIB Yevmiye",
     "SCRTEXT_L":"Kopya GIB Yevmiye Beratı Kuyruğa Atıldı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_ISGYK",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kopya GIB Yevmiye Beratı Kuyruğa Atıldı",
+    "REPTEXT":"Kopya GIB Yevmiye Beratı Kuyruğa Atıldı",
+    "SCRTEXT_S":"Kopya GIB",
+    "SCRTEXT_M":"Kopya GIB Yevmiye",
+    "SCRTEXT_L":"Kopya GIB Yevmiye Beratı Kuyruğa Atıldı"
    }
   ]
  },

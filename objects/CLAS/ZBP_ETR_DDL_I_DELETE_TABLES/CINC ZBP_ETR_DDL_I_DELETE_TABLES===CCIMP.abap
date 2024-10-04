@@ -10,6 +10,12 @@ CLASS lhc_DeleteEntries DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS lock FOR LOCK
       IMPORTING keys FOR LOCK DeleteEntries.
 
+    METHODS get_instance_features FOR INSTANCE FEATURES
+      IMPORTING keys REQUEST requested_features FOR DeleteEntries RESULT result.
+
+    METHODS deleteDocuments FOR MODIFY
+      IMPORTING keys FOR ACTION DeleteEntries~deleteDocuments RESULT result.
+
 ENDCLASS.
 
 CLASS lhc_DeleteEntries IMPLEMENTATION.
@@ -18,10 +24,20 @@ CLASS lhc_DeleteEntries IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD read.
-    CHECK sy-subrc = 0.
   ENDMETHOD.
 
   METHOD lock.
+  ENDMETHOD.
+
+  METHOD get_instance_features.
+  ENDMETHOD.
+
+  METHOD deleteDocuments.
+    READ ENTITIES OF zetr_ddl_i_delete_tables IN LOCAL MODE
+    ENTITY DeleteEntries
+    ALL FIELDS WITH
+    CORRESPONDING #( keys )
+    RESULT DATA(Documents).
   ENDMETHOD.
 
 ENDCLASS.

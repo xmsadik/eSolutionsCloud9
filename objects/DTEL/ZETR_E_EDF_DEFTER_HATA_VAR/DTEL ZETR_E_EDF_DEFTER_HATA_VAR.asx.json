@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Defterde H",
     "SCRTEXT_M":"Defterde Hata Var",
     "SCRTEXT_L":"Defterde Hata Var"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_DEFTER_HATA_VAR",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Defterde Hata Var",
+    "REPTEXT":"Defterde Hata Var",
+    "SCRTEXT_S":"Defterde H",
+    "SCRTEXT_M":"Defterde Hata Var",
+    "SCRTEXT_L":"Defterde Hata Var"
    }
   ]
  },

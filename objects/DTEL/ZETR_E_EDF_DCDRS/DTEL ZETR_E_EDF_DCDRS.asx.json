@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Mizan Fark",
     "SCRTEXT_M":"Mizan Farkı Nedeni",
     "SCRTEXT_L":"Mizan Farkı Nedeni"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_DCDRS",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Mizan Farkı Nedeni",
+    "REPTEXT":"Mizan Farkı Nedeni",
+    "SCRTEXT_S":"Mizan Fark",
+    "SCRTEXT_M":"Mizan Farkı Nedeni",
+    "SCRTEXT_L":"Mizan Farkı Nedeni"
    }
   ]
  },

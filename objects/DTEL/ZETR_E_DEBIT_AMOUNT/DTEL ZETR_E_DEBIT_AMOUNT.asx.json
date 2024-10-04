@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Debit Amn.",
     "SCRTEXT_M":"Debit Amount",
     "SCRTEXT_L":"Debit Amount"
+   },
+   {
+    "ROLLNAME":"ZETR_E_DEBIT_AMOUNT",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Borç",
+    "REPTEXT":"Borç Tutarı",
+    "SCRTEXT_S":"Borç Tut.",
+    "SCRTEXT_M":"Borç Tutarı",
+    "SCRTEXT_L":"Borç Tutarı"
    }
   ]
  },

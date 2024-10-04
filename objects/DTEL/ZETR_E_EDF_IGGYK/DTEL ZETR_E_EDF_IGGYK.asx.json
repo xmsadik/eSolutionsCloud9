@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Kopya GIB",
     "SCRTEXT_M":"Kopya GIB Yevmiye",
     "SCRTEXT_L":"Kopya GIB Yevmiye Beratı Yükleme"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_IGGYK",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Kopya GIB Yevmiye Beratı Yükleme",
+    "REPTEXT":"Kopya GIB Yevmiye Beratı Yükleme",
+    "SCRTEXT_S":"Kopya GIB",
+    "SCRTEXT_M":"Kopya GIB Yevmiye",
+    "SCRTEXT_L":"Kopya GIB Yevmiye Beratı Yükleme"
    }
   ]
  },

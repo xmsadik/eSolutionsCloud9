@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Sp.GL.Ind.",
     "SCRTEXT_M":"Special G/L Ind.",
     "SCRTEXT_L":"Special G/L Indicator"
+   },
+   {
+    "ROLLNAME":"ZETR_E_UMSKZ",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"ÖDK Göstergesi",
+    "REPTEXT":"ÖDK Göstergesi",
+    "SCRTEXT_S":"ÖDK Göst.",
+    "SCRTEXT_M":"ÖDK Göstergesi",
+    "SCRTEXT_L":"ÖDK Göstergesi"
    }
   ]
  },

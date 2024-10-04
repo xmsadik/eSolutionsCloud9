@@ -60,6 +60,17 @@
     "SCRTEXT_S":"XML Oluşum",
     "SCRTEXT_M":"XML Oluşumu Çalıştır",
     "SCRTEXT_L":"XML Oluşumu Çalıştırıldı"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_XML_OL_CAL",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"XML Oluşumu Çalıştırıldı",
+    "REPTEXT":"XML Oluşumu Çalıştırıldı",
+    "SCRTEXT_S":"XML Oluşum",
+    "SCRTEXT_M":"XML Oluşumu Çalıştır",
+    "SCRTEXT_L":"XML Oluşumu Çalıştırıldı"
    }
   ]
  },

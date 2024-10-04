@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Fin.p.st.d",
     "SCRTEXT_M":"Fin.per.start date",
     "SCRTEXT_L":"Financial period start date"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_MLYL_DNM_BAS",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Dönem başlangıcı",
+    "REPTEXT":"Dönem başlangıcı",
+    "SCRTEXT_S":"Dönem baş.",
+    "SCRTEXT_M":"Dönem başlangıcı",
+    "SCRTEXT_L":"Dönem başlangıcı"
    }
   ]
  },

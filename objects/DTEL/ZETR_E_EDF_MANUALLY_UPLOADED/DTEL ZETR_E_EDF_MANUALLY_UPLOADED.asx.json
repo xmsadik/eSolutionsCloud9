@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Def.Man.Yk",
     "SCRTEXT_M":"Defter Manuel Yüklen",
     "SCRTEXT_L":"Defter Manuel Yüklendi"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_MANUALLY_UPLOADED",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Defter Manuel Yüklendi",
+    "REPTEXT":"Defter Manuel Yüklendi",
+    "SCRTEXT_S":"Def.Man.Yk",
+    "SCRTEXT_M":"Defter Manuel Yüklen",
+    "SCRTEXT_L":"Defter Manuel Yüklendi"
    }
   ]
  },

@@ -60,6 +60,17 @@
     "SCRTEXT_S":"Yev.ber.OK",
     "SCRTEXT_M":"Yevmiye Beratı GİB",
     "SCRTEXT_L":"Yevmiye Beratı GİB'e Gönderildi"
+   },
+   {
+    "ROLLNAME":"ZETR_E_EDF_YVMY_BRT_GIB_GON",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "AS4VERS":0,
+    "DDTEXT":"Yevmiye Beratı GİB'e Gönderildi",
+    "REPTEXT":"Yevmiye Beratı GİB'e Gönderildi",
+    "SCRTEXT_S":"Yev.ber.OK",
+    "SCRTEXT_M":"Yevmiye Beratı GİB",
+    "SCRTEXT_L":"Yevmiye Beratı GİB'e Gönderildi"
    }
   ]
  },
