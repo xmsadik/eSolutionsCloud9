@@ -144,7 +144,7 @@
     IF sy-subrc = 0 AND ls_document-bldat BETWEEN ls_company_data-datab AND ls_company_data-datbi.
       ls_invoice_rule_output = get_einvoice_rule( iv_rule_type   = 'P'
                                                   is_rule_input  = ls_invoice_rule_input ).
-      IF ls_invoice_rule_output IS NOT INITIAL AND ls_invoice_rule_output-excld = abap_false.
+      IF ls_invoice_rule_output-ruleok IS NOT INITIAL AND ls_invoice_rule_output-excld = abap_false.
         ls_document-prfid = ls_invoice_rule_output-pidou.
         ls_document-invty = ls_invoice_rule_output-ityou.
         ls_document-taxex = ls_invoice_rule_output-taxex.
@@ -194,7 +194,7 @@
       ls_document-prfid = 'EARSIV'.
       ls_invoice_rule_output = get_earchive_rule( iv_rule_type   = 'P'
                                                   is_rule_input  = ls_invoice_rule_input ).
-      IF ls_invoice_rule_output IS NOT INITIAL AND ls_invoice_rule_output-excld = abap_true.
+      IF ls_invoice_rule_output-ruleok IS NOT INITIAL AND ls_invoice_rule_output-excld = abap_true.
         ls_document-invty = ls_invoice_rule_output-ityou.
         ls_document-taxex = ls_invoice_rule_output-taxex.
       ENDIF.
@@ -301,7 +301,7 @@
           CLEAR ls_invoice_rule_output.
           ls_invoice_rule_output = get_earchive_rule( iv_rule_type   = 'S'
                                                       is_rule_input  = ls_invoice_rule_input ).
-          IF ls_invoice_rule_output IS NOT INITIAL.
+          IF ls_invoice_rule_output-ruleok IS NOT INITIAL.
             ls_document-serpr = ls_invoice_rule_output-serpr.
           ELSE.
             SELECT SINGLE serpr
@@ -315,7 +315,7 @@
         CLEAR ls_invoice_rule_output.
         ls_invoice_rule_output = get_earchive_rule( iv_rule_type   = 'X'
                                               is_rule_input  = ls_invoice_rule_input ).
-        IF ls_invoice_rule_output IS NOT INITIAL.
+        IF ls_invoice_rule_output-ruleok IS NOT INITIAL.
           ls_document-xsltt = ls_invoice_rule_output-xsltt.
         ELSE.
           SELECT SINGLE xsltt
@@ -331,7 +331,7 @@
           CLEAR ls_invoice_rule_output.
           ls_invoice_rule_output = get_einvoice_rule( iv_rule_type   = 'S'
                                                       is_rule_input  = ls_invoice_rule_input ).
-          IF ls_invoice_rule_output IS NOT INITIAL.
+          IF ls_invoice_rule_output-ruleok IS NOT INITIAL.
             ls_document-serpr = ls_invoice_rule_output-serpr.
           ELSE.
             CASE ls_document-prfid.
@@ -354,7 +354,7 @@
         CLEAR ls_invoice_rule_output.
         ls_invoice_rule_output = get_einvoice_rule( iv_rule_type   = 'X'
                                                     is_rule_input  = ls_invoice_rule_input ).
-        IF ls_invoice_rule_output IS NOT INITIAL.
+        IF ls_invoice_rule_output-ruleok IS NOT INITIAL.
           ls_document-xsltt = ls_invoice_rule_output-xsltt.
         ELSE.
           SELECT SINGLE xsltt

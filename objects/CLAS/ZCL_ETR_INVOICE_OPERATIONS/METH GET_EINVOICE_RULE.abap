@@ -88,6 +88,7 @@
         CHECK ls_rule-partner = is_rule_input-partner.
       ENDIF.
       MOVE-CORRESPONDING ls_rule TO rs_rule_output.
+      rs_rule_output-ruleok = abap_true.
       EXIT.
     ENDSELECT.
   ENDMETHOD.
