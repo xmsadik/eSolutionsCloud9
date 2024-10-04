@@ -155,6 +155,10 @@
         ls_document-prfid = ls_invoice_rule_output-pidou.
         ls_document-invty = ls_invoice_rule_output-ityou.
         ls_document-taxex = ls_invoice_rule_output-taxex.
+
+        IF ls_document-prfid IS INITIAL.
+          ls_document-prfid = ls_company_data-prfid.
+        ENDIF.
       ENDIF.
     ENDIF.
 
