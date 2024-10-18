@@ -26,6 +26,25 @@
       FROM zetr_t_inv_cond
       INTO TABLE @ms_billing_data-conditions.
 
+    IF ms_billing_data-vbrk-zterm IS NOT INITIAL.
+      SELECT SINGLE CashDiscount1Days AS zbd1t, CashDiscount2Days AS zbd2t, NetPaymentDays AS zbd3t
+        FROM I_PaymentTermsConditions
+        WHERE PaymentTerms = @ms_billing_data-vbrk-zterm
+        INTO @DATA(ls_payment_terms).
+      IF sy-subrc = 0.
+        IF ms_billing_data-vbrk-netdt IS NOT INITIAL.
+          DATA(duedate) = CONV datum( ms_billing_data-vbrk-netdt + ls_payment_terms-zbd1t ).
+          DATA(date)    = CONV datum( ms_billing_data-vbrk-netdt + ls_payment_terms-zbd2t ).
+          IF duedate < date. duedate = date. ENDIF.
+          date = ms_billing_data-vbrk-netdt + ls_payment_terms-zbd3t.
+          IF duedate < date. duedate = date. ENDIF.
+        ELSE.
+          duedate = ms_billing_data-vbrk-netdt.
+        ENDIF.
+      ENDIF.
+      ms_billing_data-vbrk-netdt = duedate.
+    ENDIF.
+
     SELECT SINGLE company~companycode AS bukrs,
                   company~currency AS waers,
                   company~country AS land1,

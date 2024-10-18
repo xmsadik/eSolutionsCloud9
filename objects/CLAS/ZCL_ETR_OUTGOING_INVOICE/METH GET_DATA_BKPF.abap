@@ -83,7 +83,9 @@
            Supplier AS lifnr,
            Product AS matnr,
            DocumentItemText AS sgtxt,
-           TaxCode AS meskz
+           TaxCode AS meskz,
+           Quantity AS menge,
+           BaseUnit AS meins
       FROM i_journalentryitem AS item
         LEFT OUTER JOIN i_glaccounttext AS glaccounttext
           ON  glaccounttext~Language = @sy-langu

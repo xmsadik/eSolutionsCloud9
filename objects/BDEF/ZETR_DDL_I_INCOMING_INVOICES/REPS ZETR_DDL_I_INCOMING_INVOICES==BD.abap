@@ -39,6 +39,7 @@ authorization master ( instance )
       StatusDetail      = staex;
       PurchasingGroup   = ekgrp;
       PurchaseOrders    = ebeln;
+      AccountingDone    = accok;
     }
 
   //  create;
@@ -49,6 +50,7 @@ authorization master ( instance )
   InvoiceID,
   InvoiceUUID,
   TaxID,
+  TaxpayerTitle,
   DocumentDate,
   ReceiveDate,
   Amount,
@@ -63,6 +65,7 @@ authorization master ( instance )
   Archived,
   Printed,
   ApplicationResponse,
+  AccountingDone,
   Processed;
   field ( features : instance ) PurchasingGroup;
   association _invoiceContents { create; }
@@ -71,12 +74,12 @@ authorization master ( instance )
   action ( features : instance ) addNote parameter ZETR_DDL_I_NOTE_SELECTION result [1] $self;
   action ( features : instance ) changePrintStatus result [1] $self;
   action ( features : instance ) changeProcessStatus result [1] $self;
+  action ( features : instance ) changeAccountingStatus result [1] $self;
   action ( features : instance ) archiveInvoices result [1] $self;
   action ( features : instance ) statusUpdate result [1] $self;
   //  action ( features : instance ) downloadInvoices result [1] $self;
   action ( features : instance ) sendResponse parameter zetr_ddl_i_appresp_selection result [1] $self;
   action ( features : instance ) setAsRejected parameter zetr_ddl_i_reject_selection result [1] $self;
-  //  action ( features : instance ) setAsRejected parameter ZETR_DDL_I_INVRESP_SELECTION result [1] $self;
 }
 
 define behavior for zetr_ddl_i_incoming_invcont alias InvoiceContents

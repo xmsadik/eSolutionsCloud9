@@ -61,6 +61,8 @@ CLASS zcl_etr_outgoing_invoice DEFINITION
     TYPES matnr TYPE matnr.
     TYPES sgtxt TYPE zetr_e_descr.
     TYPES mwskz TYPE mwskz.
+    TYPES menge TYPE menge_d.
+    TYPES meins TYPE meins.
     TYPES END OF mty_bseg.
 
     TYPES BEGIN OF mty_bsec.

@@ -28,6 +28,9 @@ CLASS lhc_InvoiceList DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS setAsRejected FOR MODIFY
       IMPORTING keys FOR ACTION InvoiceList~setAsRejected RESULT result.
 
+    METHODS changeAccountingStatus FOR MODIFY
+      IMPORTING keys FOR ACTION InvoiceList~changeAccountingStatus RESULT result.
+
 ENDCLASS.
 
 CLASS lhc_InvoiceList IMPLEMENTATION.
@@ -537,6 +540,57 @@ CLASS lhc_InvoiceList IMPLEMENTATION.
                                         severity = if_abap_behv_message=>severity-success ) ) TO reported-invoicelist.
 
 
+  ENDMETHOD.
+
+  METHOD changeAccountingStatus.
+    READ ENTITIES OF zetr_ddl_i_incoming_invoices IN LOCAL MODE
+      ENTITY InvoiceList
+      ALL FIELDS WITH
+      CORRESPONDING #( keys )
+      RESULT DATA(invoices).
+
+    LOOP AT invoices ASSIGNING FIELD-SYMBOL(<invoice>).
+      <invoice>-AccountingDone = SWITCH #( <invoice>-AccountingDone WHEN abap_false THEN abap_true ELSE abap_false ).
+    ENDLOOP.
+
+    TRY.
+        MODIFY ENTITIES OF zetr_ddl_i_incoming_invoices IN LOCAL MODE
+          ENTITY invoicelist
+             UPDATE FIELDS ( AccountingDone )
+             WITH VALUE #( FOR invoice IN invoices ( documentuuid = invoice-documentuuid
+                                                     AccountingDone = invoice-AccountingDone
+                                                     %control-AccountingDone = if_abap_behv=>mk-on ) )
+                  ENTITY invoicelist
+                    CREATE BY \_invoicelogs
+                    FIELDS ( loguuid documentuuid createdby creationdate creationtime logcode lognote )
+                    AUTO FILL CID
+                    WITH VALUE #( FOR invoice IN invoices
+                                     ( documentuuid = invoice-documentuuid
+                                       %target = VALUE #( ( loguuid = cl_system_uuid=>create_uuid_c22_static( )
+                                                            documentuuid = invoice-documentuuid
+                                                            createdby = sy-uname
+                                                            creationdate = cl_abap_context_info=>get_system_date( )
+                                                            creationtime = cl_abap_context_info=>get_system_time( )
+                                                            logcode = zcl_etr_regulative_log=>mc_log_codes-accounting_stat ) ) )  )
+             FAILED failed
+             REPORTED reported.
+      CATCH cx_uuid_error.
+        "handle exception
+    ENDTRY.
+
+    READ ENTITIES OF zetr_ddl_i_incoming_invoices IN LOCAL MODE
+      ENTITY InvoiceList
+      ALL FIELDS WITH
+      CORRESPONDING #( keys )
+      RESULT invoices.
+
+    result = VALUE #( FOR invoice IN invoices
+             ( %tky   = invoice-%tky
+               %param = invoice ) ).
+
+    APPEND VALUE #( %msg = new_message( id       = 'ZETR_COMMON'
+                                        number   = '082'
+                                        severity = if_abap_behv_message=>severity-success ) ) TO reported-invoicelist.
   ENDMETHOD.
 
 ENDCLASS.

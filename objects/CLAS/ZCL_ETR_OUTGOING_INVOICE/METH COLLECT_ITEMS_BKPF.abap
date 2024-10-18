@@ -38,16 +38,16 @@
       ELSE.
         ls_items-arktx = ls_bseg_lines-txt50.
       ENDIF.
-*      IF ls_bseg_lines-menge IS NOT INITIAL.
-*        ls_items-fkimg = ls_bseg_lines-menge.
-*      ELSE.
-      ls_items-fkimg = 1.
-*      ENDIF.
-*      IF ls_bseg_lines-meins IS NOT INITIAL.
-*        ls_items-vrkme = ls_bseg_lines-meins.
-*      ELSE.
-      ls_items-vrkme = 'ST'.
-*      ENDIF.
+      IF ls_bseg_lines-menge IS NOT INITIAL.
+        ls_items-fkimg = ls_bseg_lines-menge.
+      ELSE.
+        ls_items-fkimg = 1.
+      ENDIF.
+      IF ls_bseg_lines-meins IS NOT INITIAL.
+        ls_items-vrkme = ls_bseg_lines-meins.
+      ELSE.
+        ls_items-vrkme = 'ST'.
+      ENDIF.
       ls_items-netwr = ls_bseg_lines-wrbtr.
       ls_items-mwskz = ls_bseg_lines-mwskz.
       ls_items-waers = ms_accdoc_data-bkpf-waers.

@@ -14,6 +14,7 @@ define behavior for zetr_ddl_p_incoming_invoices alias InvoiceList
   use action addNote;
   use action changePrintStatus;
   use action changeProcessStatus;
+  use action changeAccountingStatus;
 
   use association _invoiceContents;
   use association _invoiceLogs;

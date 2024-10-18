@@ -22,7 +22,61 @@
     "CREATE_USER":"SAP_CUSTOMER",
     "CREATE_TIMESTAMP":"+020240102131732",
     "CHANGE_USER":"SAP_CUSTOMER",
-    "CHANGE_TIMESTAMP":"+020240102131754"
+    "CHANGE_TIMESTAMP":"+020241016121823"
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUI",
+  "data":
+  [
+   {
+    "APP_ID":"ZETR_IAM_INCOMING_INVOICES_EXT",
+    "UUID":"wcxnZTdNHu+i9xehVC+iIw==",
+    "AUTH_OBJECT":"M_BEST_EKG",
+    "AUTH_OBJECT_INST_ID":1,
+    "IBS_SOURCE":"",
+    "STATUS":"U",
+    "INACTIVE":"",
+    "COPIED":"",
+    "IBS_SOURCE_TYPE":""
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUO",
+  "data":
+  [
+   {
+    "APP_ID":"ZETR_IAM_INCOMING_INVOICES_EXT",
+    "AUTH_OBJECT":"M_BEST_EKG",
+    "STATUS":"U"
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUV",
+  "data":
+  [
+   {
+    "APP_ID":"ZETR_IAM_INCOMING_INVOICES_EXT",
+    "UUID":"wcxnZTdNHu+i9xehVC/CIw==",
+    "PARENT_ID":"wcxnZTdNHu+i9xehVC+iIw==",
+    "FIELD":"ACTVT",
+    "LOW_VALUE":"03",
+    "HIGH_VALUE":"",
+    "STATUS":"U",
+    "COPIED":""
+   },
+   {
+    "APP_ID":"ZETR_IAM_INCOMING_INVOICES_EXT",
+    "UUID":"wcxnZTdNHu+i9xehVC/iIw==",
+    "PARENT_ID":"wcxnZTdNHu+i9xehVC+iIw==",
+    "FIELD":"EKGRP",
+    "LOW_VALUE":"",
+    "HIGH_VALUE":"",
+    "STATUS":"U",
+    "COPIED":""
    }
   ]
  },

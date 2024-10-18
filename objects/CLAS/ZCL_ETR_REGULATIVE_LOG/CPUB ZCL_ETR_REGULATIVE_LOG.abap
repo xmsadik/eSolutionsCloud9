@@ -32,6 +32,7 @@ CLASS zcl_etr_regulative_log DEFINITION
     CONSTANTS sms TYPE zetr_e_logcd VALUE 'SMS' ##NO_TEXT.
     CONSTANTS saved TYPE zetr_e_logcd VALUE 'SAVED' ##NO_TEXT.
     CONSTANTS taxpayers_updated TYPE zetr_e_logcd VALUE 'TAXPAYERS' ##NO_TEXT.
+    CONSTANTS accounting_stat TYPE zetr_e_logcd VALUE 'ACCSTAT' ##NO_TEXT.
     CONSTANTS END OF mc_log_codes.
 
     CLASS-METHODS create
