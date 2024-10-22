@@ -8,8 +8,8 @@
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
     "CHANGED_ON":"2024-10-22",
-    "CHANGED_AT":"14:52:27",
-    "UUID":"C1CC6765374D1EEFA490A81658024244",
+    "CHANGED_AT":"18:28:45",
+    "UUID":"C1CC6765374D1EEFA4946F04682CC244",
     "ABAP_LANGUAGE_VERSION":"5"
    }
   ]
@@ -34,7 +34,7 @@
     "DDLXNAME":"ZETR_DDL_E_OUTGOING_INVCONT",
     "VERSION":"A",
     "UUID":"",
-    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Invoice Contents',\r\n                typeName: 'Invoice Content',\r\n                title:{ type: #STANDARD, label: 'Invoice Contents', value: 'Filename' }\r\n           }\r\n}\r\nannotate entity zetr_ddl_p_outgoing_invcont with\r\n{\r\n  @UI.hidden: true\r\n  DocumentUUID;\r\n  @UI.lineItem: [{ position: 2 }]\r\n  ContentType;\r\n  @UI.lineItem: [{ position: 3 }]\r\n  DocumentType;\r\n  @UI.hidden: true\r\n  DocumentTypeText;\r\n  @UI.hidden: true\r\n  CompanyCode;\r\n  //  @UI.lineItem: [{ position: 3 }]\r\n  @UI.hidden: true\r\n  Content;\r\n  @UI.hidden: true\r\n  MimeType;\r\n  @UI.hidden: true\r\n  ContentURL;\r\n  @UI: { lineItem:       [ { type: #WITH_URL, url: 'ContentURL', position: 1 } ] }\r\n  Filename;\r\n}"
+    "SOURCE":"@Metadata.layer: #CORE\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Invoice Contents',\r\n                typeName: 'Invoice Content',\r\n                title:{ type: #STANDARD, label: 'Invoice Contents', value: 'Filename' }\r\n           }\r\n}\r\nannotate entity zetr_ddl_p_outgoing_invcont with\r\n{\r\n  @UI.hidden: true\r\n  DocumentUUID;\r\n  @UI.lineItem: [{ position: 2 }]\r\n  ContentType;\r\n  @UI.lineItem: [{ position: 3 }]\r\n  DocumentType;\r\n  @UI.hidden: true\r\n  DocumentTypeText;\r\n  @UI.hidden: true\r\n  CompanyCode;\r\n  //  @UI.lineItem: [{ position: 1 }]\r\n  @UI.hidden: true\r\n  Content;\r\n  @UI.hidden: true\r\n  MimeType;\r\n  @UI.hidden: true\r\n  ContentURL;\r\n  //  @UI.hidden: true\r\n  @UI: { lineItem:       [ { type: #WITH_URL, url: 'ContentURL', position: 1 } ] }\r\n  Filename;\r\n}"
    }
   ]
  },
@@ -213,7 +213,7 @@
     "EXTENDED_ARTIFACT":"ZETR_DDL_P_OUTGOING_INVCONT",
     "VARIANT":"",
     "LAYER":1500,
-    "DT_UUID":"C1CC6765374D1EEFA490A81658024244",
+    "DT_UUID":"C1CC6765374D1EEFA4946F04682CC244",
     "RT_HASH":"5AD6EC882B94BA460ABC4E945225FFE02B847F64",
     "GEN_VERSION":"0",
     "TYPE":"0"

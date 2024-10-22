@@ -137,6 +137,7 @@ authorization dependent by _outgoingInvoices
   update;
   delete;
   field ( readonly ) DocumentUUID;
+//  field ( suppress ) Filename;
   field ( readonly : update ) ContentType, DocumentType;
   association _outgoingInvoices;
 }
