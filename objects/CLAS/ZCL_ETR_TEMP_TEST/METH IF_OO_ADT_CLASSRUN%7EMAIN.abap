@@ -1,7 +1,7 @@
   METHOD if_oo_adt_classrun~main.
     DATA lt_uuid TYPE RANGE OF sysuuid_c22.
 
-    SELECT documentuuid, documentnumber
+    SELECT 'I' AS sign, 'EQ' AS option, documentuuid AS low
       FROM zetr_ddl_i_outgoing_invoices AS z
       INNER JOIN i_journalentry AS j
       ON  j~CompanyCode = z~CompanyCode
