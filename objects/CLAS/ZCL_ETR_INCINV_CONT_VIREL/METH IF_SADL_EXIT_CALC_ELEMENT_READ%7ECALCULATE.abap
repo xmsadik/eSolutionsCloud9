@@ -1,9 +1,15 @@
   METHOD if_sadl_exit_calc_element_read~calculate.
     DATA: lt_output TYPE STANDARD TABLE OF zetr_ddl_p_incoming_invcont.
     lt_output = CORRESPONDING #( it_original_data ).
+    LOOP AT lt_output ASSIGNING FIELD-SYMBOL(<ls_output>).
+      <ls_output>-ContentUrl = 'https://' && zcl_etr_regulative_common=>get_ui_url( ) &&
+                               '/sap/opu/odata/sap/ZETR_DDL_D_INCOMING_INV/InvoiceContents(DocumentUUID=guid''' &&
+                               <ls_output>-DocumentUUID && ''',ContentType=''' && <ls_output>-ContentType &&
+                               ''',DocumentType=''' && <ls_output>-DocumentType && ''')/$value'.
+    ENDLOOP.
     IF lines( lt_output ) = 1.
       READ TABLE lt_output
-        ASSIGNING FIELD-SYMBOL(<ls_output>)
+        ASSIGNING <ls_output>
         INDEX 1.
       IF sy-subrc = 0.
         SELECT SINGLE contn
