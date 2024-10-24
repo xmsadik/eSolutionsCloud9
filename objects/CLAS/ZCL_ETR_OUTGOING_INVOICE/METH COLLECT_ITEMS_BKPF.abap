@@ -13,6 +13,10 @@
     LOOP AT ms_accdoc_data-bseg INTO DATA(ls_bseg_lines)  WHERE ( koart = 'S' OR
                                                                   koart = 'A' )
                                                             AND shkzg = 'H' .
+      ls_bseg_lines-wrbtr = abs( ls_bseg_lines-wrbtr ).
+      ls_bseg_lines-dmbtr = abs( ls_bseg_lines-dmbtr ).
+      ls_bseg_lines-menge = abs( ls_bseg_lines-menge ).
+
       IF ls_bseg_lines-lokkt IS NOT INITIAL.
         ls_bseg_lines-hkont = ls_bseg_lines-lokkt.
       ENDIF.

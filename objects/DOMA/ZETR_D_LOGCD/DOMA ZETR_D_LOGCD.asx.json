@@ -332,6 +332,15 @@
     "DOMVALUE_L":"ACCSTAT",
     "DOMVALUE_H":"",
     "APPVAL":""
+   },
+   {
+    "DOMNAME":"ZETR_D_LOGCD",
+    "AS4LOCAL":"N",
+    "VALPOS":32,
+    "AS4VERS":0,
+    "DOMVALUE_L":"JOBLOG",
+    "DOMVALUE_H":"",
+    "APPVAL":""
    }
   ]
  },
@@ -679,6 +688,17 @@
     "DOMVAL_LD":"",
     "DOMVAL_HD":"",
     "DOMVALUE_L":"ACCSTAT"
+   },
+   {
+    "DOMNAME":"ZETR_D_LOGCD",
+    "DDLANGUAGE":"E",
+    "AS4LOCAL":"N",
+    "VALPOS":32,
+    "AS4VERS":0,
+    "DDTEXT":"Job Log",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"JOBLOG"
    },
    {
     "DOMNAME":"ZETR_D_LOGCD",

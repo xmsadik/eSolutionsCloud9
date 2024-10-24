@@ -58,3 +58,8 @@ CLASS zcl_etr_regulative_common DEFINITION
         !number      TYPE string
       RETURNING
         VALUE(words) TYPE string.
+    CLASS-METHODS get_xslt_source
+      IMPORTING
+        iv_xslt_name          TYPE zetr_e_xsltt
+      RETURNING
+        VALUE(rv_xslt_source) TYPE string.

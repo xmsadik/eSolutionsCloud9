@@ -12,7 +12,7 @@
     "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'eInvoice XSLT Templates'\r\ndefine view entity zetr_ddl_i_invoice_xslttemp\r\n  as select from zetr_t_eixslt\r\n  association to parent zetr_ddl_i_invoice_parameters as _eInvoiceParameters on $projection.CompanyCode = _eInvoiceParameters.CompanyCode\r\n{\r\n  key bukrs as CompanyCode,\r\n  key xsltt as XSLTTemplate,\r\n      deflt as DefaultTemplate,\r\n      xsltc as XSLTContent,\r\n      filen as Filename,\r\n      mimet as Mimetype,\r\n      _eInvoiceParameters // Make association public\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"ZETR_T_EIXSLT\"\n],\n\"ASSOCIATED\":\n[\n\"ZETR_DDL_I_INVOICE_PARAMETERS\"\n],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"4",
+    "CHGFLAG":"3",
     "SOURCE_TYPE":"W",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"

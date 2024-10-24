@@ -1,6 +1,12 @@
   METHOD outgoing_invoice_preview.
+    DATA(lv_xslt_source) = zcl_etr_regulative_common=>get_xslt_source( iv_xsltt ).
+    IF lv_xslt_source IS NOT INITIAL.
+      DATA(lv_xslt_name) = iv_xsltt.
+    ELSE.
+      lv_xslt_name = 'ZETR_FATURA_GENEL'.
+    ENDIF.
     TRY.
-        CALL TRANSFORMATION (iv_xsltt) SOURCE XML iv_document_ubl RESULT XML rv_document.
+        CALL TRANSFORMATION (lv_xslt_name) SOURCE XML iv_document_ubl RESULT XML rv_document.
       CATCH cx_root INTO DATA(lx_root).
         DATA(lv_message) = CONV bapi_msg( lx_root->get_text( ) ).
         RAISE EXCEPTION TYPE zcx_etr_regulative_exception

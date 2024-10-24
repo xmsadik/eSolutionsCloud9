@@ -132,7 +132,10 @@
         WHERE bukrs = @ms_document-bukrs
           AND xsltt = @ms_document-xsltt
         INTO @DATA(lv_xslt_source).
-      IF sy-subrc IS INITIAL AND lv_xslt_source IS NOT INITIAL.
+      IF sy-subrc <> 0 OR lv_xslt_source IS INITIAL.
+        lv_xslt_source = zcl_etr_regulative_common=>get_xslt_source( ms_document-xsltt ).
+      ENDIF.
+      IF lv_xslt_source IS NOT INITIAL.
         APPEND INITIAL LINE TO ms_invoice_ubl-additionaldocumentreference ASSIGNING FIELD-SYMBOL(<ls_document_reference>).
         <ls_document_reference>-id-content = ms_document-docui.
         DATA(lv_sydatum) = cl_abap_context_info=>get_system_date( ).

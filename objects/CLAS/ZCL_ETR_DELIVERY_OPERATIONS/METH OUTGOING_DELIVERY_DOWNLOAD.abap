@@ -1,5 +1,5 @@
   METHOD outgoing_delivery_download.
-    SELECT SINGLE docui, bukrs, archv, dlvii AS docii, dlvui AS duich, dlvno AS docno, envui, ruuid, stacd
+    SELECT SINGLE docui, bukrs, archv, dlvii AS docii, dlvui AS duich, dlvno AS docno, envui, ruuid, stacd, xsltt
       FROM zetr_t_ogdlv
       WHERE docui = @iv_document_uid
       INTO @DATA(ls_document).
@@ -31,9 +31,17 @@
             WHEN 'UBL'.
               rv_delivery_data = lv_delivery_ubl.
             WHEN OTHERS.
+              IF ls_document-xsltt IS INITIAL.
+                SELECT SINGLE xsltt
+                  FROM zetr_t_edxslt
+                  WHERE bukrs = @ls_document-bukrs
+                    AND deflt = @abap_true
+                  INTO @ls_document-xsltt.
+              ENDIF.
               rv_delivery_data = outgoing_delivery_preview( iv_document_uid = iv_document_uid
                                                             iv_content_type = iv_content_type
-                                                            iv_document_ubl = lv_delivery_ubl ).
+                                                            iv_document_ubl = lv_delivery_ubl
+                                                            iv_xsltt        = ls_document-xsltt ).
           ENDCASE.
         WHEN OTHERS.
           DATA(lo_edelivery_service) = zcl_etr_edelivery_ws=>factory( iv_company = ls_document-bukrs ).
