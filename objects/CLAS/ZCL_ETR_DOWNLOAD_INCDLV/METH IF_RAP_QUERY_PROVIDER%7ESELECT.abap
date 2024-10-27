@@ -51,7 +51,7 @@
                   iv_date_from       = lv_begda
                   iv_date_to         = lv_endda
                   iv_import_received = lv_imrec
-                  iv_invoice_uuid    = lv_invui
+                  iv_delivery_uuid   = lv_invui
                 IMPORTING
                   et_list            = DATA(lt_list)
                   et_items           = DATA(lt_items) ).
