@@ -2,11 +2,13 @@
     DATA(lo_edelivery_service) = zcl_etr_edelivery_ws=>factory( mv_company_code ).
     lo_edelivery_service->get_incoming_deliveries(
       EXPORTING
-        iv_date_from = iv_date_from
-        iv_date_to   = iv_date_to
+        iv_date_from       = iv_date_from
+        iv_date_to         = iv_date_to
+        iv_delivery_uuid   = iv_delivery_uuid
+        iv_import_received = iv_import_received
       IMPORTING
-        et_items     = et_items
-        et_list      = et_list ).
+        et_items           = et_items
+        et_list            = et_list ).
     CHECK et_list IS NOT INITIAL.
     SELECT dlvui
       FROM zetr_t_icdlv

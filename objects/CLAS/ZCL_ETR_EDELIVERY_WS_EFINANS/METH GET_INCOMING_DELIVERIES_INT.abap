@@ -1,7 +1,8 @@
   METHOD get_incoming_deliveries_int.
-    DATA: lv_request_xml TYPE string.
+    DATA: lv_request_xml     TYPE string,
+          lv_import_received TYPE string.
     READ TABLE mt_custom_parameters INTO DATA(ls_custom_parameter) WITH TABLE KEY by_cuspa COMPONENTS cuspa = mc_erpcode_parameter.
-
+    lv_import_received = COND #( WHEN iv_import_received = abap_true THEN 'true' ).
     CONCATENATE
     '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.connector.uut.cs.com.tr/">'
       '<soapenv:Header>'
@@ -19,10 +20,12 @@
               '<belgeTuru>IRSALIYE</belgeTuru>'
               '<belgeVersiyon>1.0</belgeVersiyon>'
               '<donusTipiVersiyon>2.0</donusTipiVersiyon>'
+              '<belgelerAlindiMi>' lv_import_received '</belgelerAlindiMi>'
               '<erpKodu>' ls_custom_parameter-value '</erpKodu>'
               '<gelisTarihiBaslangic>' iv_date_from '000000</gelisTarihiBaslangic>'
               '<gelisTarihiBitis>' iv_date_to '235959</gelisTarihiBitis>'
               '<vergiTcKimlikNo>' mv_company_taxid '</vergiTcKimlikNo>'
+              '<ettn>' iv_delivery_uuid '</ettn>'
            '</parametreler>'
         '</ser:gelenBelgeleriAlExt>'
       '</soapenv:Body>'

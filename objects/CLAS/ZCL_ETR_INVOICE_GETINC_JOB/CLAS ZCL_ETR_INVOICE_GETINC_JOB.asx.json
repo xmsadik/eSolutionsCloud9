@@ -73,7 +73,7 @@
    {
     "CLSNAME":"ZCL_ETR_INVOICE_GETINC_JOB",
     "LANGU":"E",
-    "DESCRIPT":"Invoice Users Job"
+    "DESCRIPT":"Incoming Invoice Download Job"
    }
   ]
  },

@@ -62,11 +62,13 @@ CLASS zcl_etr_delivery_operations DEFINITION
 
     METHODS get_incoming_deliveries
       IMPORTING
-        !iv_date_from TYPE datum OPTIONAL
-        !iv_date_to   TYPE datum OPTIONAL
+        !iv_date_from       TYPE datum OPTIONAL
+        !iv_date_to         TYPE datum OPTIONAL
+        !iv_import_received TYPE zetr_e_imrec OPTIONAL
+        !iv_delivery_uuid   TYPE zetr_e_duich OPTIONAL
       EXPORTING
-        et_list       TYPE mty_incoming_list
-        et_items      TYPE mty_incoming_items
+        et_list             TYPE mty_incoming_list
+        et_items            TYPE mty_incoming_items
       RAISING
         zcx_etr_regulative_exception .
 

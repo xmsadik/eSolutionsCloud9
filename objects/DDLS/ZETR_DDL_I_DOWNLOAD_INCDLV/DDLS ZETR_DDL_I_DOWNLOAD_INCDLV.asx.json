@@ -9,10 +9,10 @@
     "AS4USER":"SAP_CUSTOMER",
     "AS4DATE":"0000-00-00",
     "AS4TIME":"00:00:00",
-    "SOURCE":"@EndUserText.label: 'Download Incoming Deliveries'\r\n@ObjectModel.query.implementedBy:'ABAP:ZCL_ETR_DOWNLOAD_INCDLV'\r\n//@Search.searchable: true\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Download Incoming Deliveries',\r\n                typeName: 'Download Incoming Delivery',\r\n                title:{ type: #STANDARD, label: 'Download Incoming Deliveries', value: 'dlvno' }\r\n           }\r\n}\r\ndefine root custom entity ZETR_DDL_I_DOWNLOAD_INCDLV\r\n  // with parameters parameter_name : parameter_type\r\n{\r\n      @UI    : { lineItem:       [ { position: 1 } ] }\r\n      //      @Search.defaultSearchElement: true\r\n  key docui  : sysuuid_c22;\r\n      @UI    : { lineItem:       [ { position: 2, importance: #HIGH } ],\r\n                 selectionField: [ { position: 2 } ] }\r\n      @Consumption.filter : {  multipleSelections: true }\r\n      @Consumption.valueHelpDefinition: [ { entity: { name: 'zetr_ddl_vh_company_codes', element: 'CompanyCode' }}]\r\n      bukrs  : bukrs;\r\n      @UI    : { lineItem:       [ { position: 3 } ] }\r\n      dlvui  : zetr_e_duich;\r\n      @UI    : { lineItem:       [ { position: 4 } ] }\r\n      dlvno  : zetr_e_docno;\r\n      @UI    : { lineItem:       [ { position: 5 } ] }\r\n      prfid  : zetr_e_dlprf;\r\n      @UI    : { lineItem:       [ { position: 6 } ] }\r\n      dlvty  : zetr_e_dlvty;\r\n      @UI    : { lineItem:       [ { position: 7 } ] }\r\n      taxid  : zetr_e_taxid;\r\n      @UI    : { lineItem:       [ { position: 8 } ] }\r\n      aliass : zetr_e_alias;\r\n      @UI    : { lineItem:       [ { position: 9 } ] }\r\n      title  : zetr_e_title;\r\n      @UI    : { lineItem:       [ { position: 10 } ] }\r\n      bldat  : bldat;\r\n      @UI    : { lineItem:       [ { position: 11 } ],\r\n                 selectionField: [ { position: 11 } ] }\r\n      @Consumption.filter : {  selectionType: #INTERVAL }\r\n      recdt  : zetr_e_recdt;\r\n      @Semantics.amount.currencyCode : 'waers'\r\n      @UI    : { lineItem:       [ { position: 12 } ] }\r\n      wrbtr  : wrbtr_cs;\r\n      @UI    : { lineItem:       [ { position: 14 } ] }\r\n      waers  : waers;\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
+    "SOURCE":"@EndUserText.label: 'Download Incoming Deliveries'\r\n@ObjectModel.query.implementedBy:'ABAP:ZCL_ETR_DOWNLOAD_INCDLV'\r\n//@Search.searchable: true\r\n@UI:{\r\nheaderInfo:{\r\n                typeNamePlural: 'Download Incoming Deliveries',\r\n                typeName: 'Download Incoming Delivery',\r\n                title:{ type: #STANDARD, label: 'Download Incoming Deliveries', value: 'dlvno' }\r\n           }\r\n}\r\ndefine root custom entity ZETR_DDL_I_DOWNLOAD_INCDLV\r\n  // with parameters parameter_name : parameter_type\r\n{\r\n      @UI    : { lineItem:       [ { position: 1 } ] }\r\n      //      @Search.defaultSearchElement: true\r\n  key docui  : sysuuid_c22;\r\n      @UI    : { lineItem:       [ { position: 2, importance: #HIGH } ],\r\n                 selectionField: [ { position: 2 } ] }\r\n      @Consumption.filter : {  multipleSelections: true }\r\n      @Consumption.valueHelpDefinition: [ { entity: { name: 'zetr_ddl_vh_company_codes', element: 'CompanyCode' }}]\r\n      bukrs  : bukrs;\r\n      @Consumption.filter : {  selectionType: #SINGLE, multipleSelections: false }\r\n      @UI    : { lineItem:       [ { position: 3 } ],\r\n                 selectionField: [ { position: 3 } ] }\r\n      dlvui  : zetr_e_duich;\r\n      @UI    : { lineItem:       [ { position: 4 } ] }\r\n      dlvno  : zetr_e_docno;\r\n      @UI    : { lineItem:       [ { position: 5 } ] }\r\n      prfid  : zetr_e_dlprf;\r\n      @UI    : { lineItem:       [ { position: 6 } ] }\r\n      dlvty  : zetr_e_dlvty;\r\n      @UI    : { lineItem:       [ { position: 7 } ] }\r\n      taxid  : zetr_e_taxid;\r\n      @UI    : { lineItem:       [ { position: 8 } ] }\r\n      aliass : zetr_e_alias;\r\n      @UI    : { lineItem:       [ { position: 9 } ] }\r\n      title  : zetr_e_title;\r\n      @UI    : { lineItem:       [ { position: 10 } ] }\r\n      bldat  : bldat;\r\n      @UI    : { lineItem:       [ { position: 11 } ],\r\n                 selectionField: [ { position: 11 } ] }\r\n      @Consumption.filter : {  selectionType: #INTERVAL }\r\n      recdt  : zetr_e_recdt;\r\n      @Semantics.amount.currencyCode : 'waers'\r\n      @UI    : { lineItem:       [ { position: 12 } ] }\r\n      wrbtr  : wrbtr_cs;\r\n      @UI    : { lineItem:       [ { position: 14 } ] }\r\n      waers  : waers;\r\n      @UI    : { selectionField: [ { position: 16 } ] }\r\n      @Consumption.valueHelpDefinition: [ { entity: { name: 'zetr_ddl_vh_aba_boolean', element: 'Value' }}]\r\n      imrec  : zetr_e_imrec;      \r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[],\n\"ASSOCIATED\":\n[],\n\"BASE\":\n[],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":",W4T",
+    "CHGFLAG":"4",
     "SOURCE_TYPE":"Q",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -126,6 +126,18 @@
     "NODENAME":".NODE1",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
+    "FIELDNAME":"IMREC",
+    "DEPTH":0,
+    "DDTEXT":"Import received",
+    "FIELDLABEL":"",
+    "QUICKINFO":""
+   },
+   {
+    "DDLNAME":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "NODENAME":".NODE1",
+    "DDLANGUAGE":"E",
+    "AS4LOCAL":"N",
     "FIELDNAME":"PRFID",
     "DEPTH":0,
     "DDTEXT":"Profile ID",
@@ -214,28 +226,28 @@
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"ALIASS",
     "NAME":"UI",
-    "POSITION":23,
+    "POSITION":27,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"ALIASS",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":24,
+    "POSITION":28,
     "VALUE":"8"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"BLDAT",
     "NAME":"UI",
-    "POSITION":27,
+    "POSITION":31,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"BLDAT",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":28,
+    "POSITION":32,
     "VALUE":"10"
    },
    {
@@ -312,42 +324,70 @@
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVNO",
     "NAME":"UI",
-    "POSITION":15,
+    "POSITION":19,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVNO",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":16,
+    "POSITION":20,
     "VALUE":"4"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVTY",
     "NAME":"UI",
-    "POSITION":19,
+    "POSITION":23,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVTY",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":20,
+    "POSITION":24,
     "VALUE":"6"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVUI",
-    "NAME":"UI",
+    "NAME":"CONSUMPTION.FILTER",
     "POSITION":13,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"DLVUI",
-    "NAME":"UI.LINEITEM$1$.POSITION",
+    "NAME":"CONSUMPTION.FILTER.MULTIPLESELECTIONS",
+    "POSITION":15,
+    "VALUE":"false"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"DLVUI",
+    "NAME":"CONSUMPTION.FILTER.SELECTIONTYPE",
     "POSITION":14,
+    "VALUE":"#SINGLE"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"DLVUI",
+    "NAME":"UI",
+    "POSITION":16,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"DLVUI",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "POSITION":17,
+    "VALUE":"3"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"DLVUI",
+    "NAME":"UI.SELECTIONFIELD$1$.POSITION",
+    "POSITION":18,
     "VALUE":"3"
    },
    {
@@ -366,121 +406,163 @@
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"PRFID",
+    "LFIELDNAME":"IMREC",
+    "NAME":"CONSUMPTION",
+    "POSITION":46,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"IMREC",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY",
+    "POSITION":47,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"IMREC",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.ELEMENT",
+    "POSITION":49,
+    "VALUE":"'Value'"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"IMREC",
+    "NAME":"CONSUMPTION.VALUEHELPDEFINITION$1$.ENTITY.NAME",
+    "POSITION":48,
+    "VALUE":"'zetr_ddl_vh_aba_boolean'"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"IMREC",
     "NAME":"UI",
-    "POSITION":17,
+    "POSITION":44,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"PRFID",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":18,
-    "VALUE":"5"
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"RECDT",
-    "NAME":"CONSUMPTION.FILTER",
-    "POSITION":32,
-    "VALUE":""
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"RECDT",
-    "NAME":"CONSUMPTION.FILTER.SELECTIONTYPE",
-    "POSITION":33,
-    "VALUE":"#INTERVAL"
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"RECDT",
-    "NAME":"UI",
-    "POSITION":29,
-    "VALUE":""
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"RECDT",
-    "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":30,
-    "VALUE":"11"
-   },
-   {
-    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"RECDT",
+    "LFIELDNAME":"IMREC",
     "NAME":"UI.SELECTIONFIELD$1$.POSITION",
-    "POSITION":31,
-    "VALUE":"11"
+    "POSITION":45,
+    "VALUE":"16"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"TAXID",
+    "LFIELDNAME":"PRFID",
     "NAME":"UI",
     "POSITION":21,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"TAXID",
+    "LFIELDNAME":"PRFID",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "POSITION":22,
-    "VALUE":"7"
+    "VALUE":"5"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"TITLE",
+    "LFIELDNAME":"RECDT",
+    "NAME":"CONSUMPTION.FILTER",
+    "POSITION":36,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"RECDT",
+    "NAME":"CONSUMPTION.FILTER.SELECTIONTYPE",
+    "POSITION":37,
+    "VALUE":"#INTERVAL"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"RECDT",
+    "NAME":"UI",
+    "POSITION":33,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"RECDT",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "POSITION":34,
+    "VALUE":"11"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"RECDT",
+    "NAME":"UI.SELECTIONFIELD$1$.POSITION",
+    "POSITION":35,
+    "VALUE":"11"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"TAXID",
     "NAME":"UI",
     "POSITION":25,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
-    "LFIELDNAME":"TITLE",
+    "LFIELDNAME":"TAXID",
     "NAME":"UI.LINEITEM$1$.POSITION",
     "POSITION":26,
+    "VALUE":"7"
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"TITLE",
+    "NAME":"UI",
+    "POSITION":29,
+    "VALUE":""
+   },
+   {
+    "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
+    "LFIELDNAME":"TITLE",
+    "NAME":"UI.LINEITEM$1$.POSITION",
+    "POSITION":30,
     "VALUE":"9"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WAERS",
     "NAME":"UI",
-    "POSITION":38,
+    "POSITION":42,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WAERS",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":39,
+    "POSITION":43,
     "VALUE":"14"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WRBTR",
     "NAME":"SEMANTICS",
-    "POSITION":34,
+    "POSITION":38,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WRBTR",
     "NAME":"SEMANTICS.AMOUNT.CURRENCYCODE",
-    "POSITION":35,
+    "POSITION":39,
     "VALUE":"'waers'"
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WRBTR",
     "NAME":"UI",
-    "POSITION":36,
+    "POSITION":40,
     "VALUE":""
    },
    {
     "STRUCOBJN":"ZETR_DDL_I_DOWNLOAD_INCDLV",
     "LFIELDNAME":"WRBTR",
     "NAME":"UI.LINEITEM$1$.POSITION",
-    "POSITION":37,
+    "POSITION":41,
     "VALUE":"12"
    }
   ]

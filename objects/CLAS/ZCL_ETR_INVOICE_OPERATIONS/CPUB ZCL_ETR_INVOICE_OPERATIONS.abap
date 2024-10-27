@@ -74,7 +74,7 @@ CLASS zcl_etr_invoice_operations DEFINITION
     METHODS accounting_document_check
       IMPORTING
         !is_accountingdocheader TYPE zcl_etr_invoice_exits=>mty_accdoc_header
-        !it_accountingdocitems  TYPE zcl_etr_invoice_exits=>mty_accdoc_items
+*        !it_accountingdocitems  TYPE zcl_etr_invoice_exits=>mty_accdoc_items
       CHANGING
         !cs_validationmessage   TYPE symsg.
 

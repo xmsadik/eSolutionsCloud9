@@ -101,7 +101,7 @@ CLASS zcl_etr_invoice_exits DEFINITION
     CLASS-METHODS fin_accdoc_validation
       IMPORTING
         !is_accountingdocheader TYPE mty_accdoc_header
-        !it_accountingdocitems  TYPE mty_accdoc_items
+*        !it_accountingdocitems  TYPE mty_accdoc_items
       CHANGING
         !cs_validationmessage   TYPE symsg.
 
