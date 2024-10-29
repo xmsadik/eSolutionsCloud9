@@ -2,7 +2,7 @@
     LOOP AT it_parameters INTO DATA(ls_parameter).
       CASE ls_parameter-selname.
         WHEN 'P_BUKRS'.
-          IF ls_parameter-low IS INITIAL.
+          IF ls_parameter-low IS NOT INITIAL.
             SELECT bukrs, title
               FROM zetr_t_cmpin
               WHERE bukrs EQ @ls_parameter-low
