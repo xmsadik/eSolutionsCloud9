@@ -22,19 +22,22 @@
           DATA(lv_imrec) = CONV abap_boolean( ls_parameter-low ).
       ENDCASE.
     ENDLOOP.
-    IF lv_begda IS INITIAL.
+    IF lv_begda IS INITIAL AND lv_endda IS INITIAL.
       lv_begda = cl_abap_context_info=>get_system_date( ) - 1.
-    ENDIF.
-    IF lv_endda IS INITIAL.
+      lv_endda = cl_abap_context_info=>get_system_date( ).
+    ELSEIF lv_begda IS INITIAL AND lv_endda IS NOT INITIAL.
+      lv_begda = lv_endda(6) && '01'.
+    ELSEIF lv_begda IS NOT INITIAL AND lv_endda IS INITIAL.
       lv_endda = lv_begda.
+    ENDIF.
+    IF lv_begda > lv_endda.
+      DATA(lv_temp_date) = lv_begda.
+      lv_begda = lv_endda.
+      lv_endda = lv_temp_date.
     ENDIF.
     TRY.
         DATA(lo_log) = cl_bali_log=>create_with_header( cl_bali_header_setter=>create( object = 'ZETR_ALO_REGULATIVE'
                                                                                       subobject = 'INVOICE_GETINC_JOB' ) ).
-        DATA(lo_message) = cl_bali_message_setter=>create( severity = if_bali_constants=>c_severity_information
-                                                           id = 'ZETR_COMMON'
-                                                           number = '213' ).
-        lo_log->add_item( lo_message ).
         LOOP AT lt_companies INTO DATA(ls_company).
           TRY.
               DATA(lo_invoice_operations) = zcl_etr_invoice_operations=>factory( ls_company-bukrs ).
@@ -43,34 +46,27 @@
                                                                                     iv_import_received = lv_imrec
                                                                                     iv_invoice_uuid = lv_invui ).
               DATA(lv_saved_records) = lines( lt_invoice_list ).
-              lo_message = cl_bali_message_setter=>create( severity = if_bali_constants=>c_severity_status
-                                                           id = 'ZETR_COMMON'
-                                                           number = '000'
-                                                           variable_1 = CONV #( ls_company-bukrs )
-                                                           variable_2 = CONV #( ls_company-title )
-                                                           variable_3 = '->'
-                                                           variable_4 = CONV #( lv_saved_records ) ).
+              DATA(lo_message) = cl_bali_message_setter=>create( severity = if_bali_constants=>c_severity_status
+                                                                 id = 'ZETR_COMMON'
+                                                                 number = '000'
+                                                                 variable_1 = CONV #( ls_company-bukrs )
+                                                                 variable_2 = CONV #( ls_company-title )
+                                                                 variable_3 = '->'
+                                                                 variable_4 = CONV #( lv_saved_records ) ).
               lo_log->add_item( lo_message ).
             CATCH zcx_etr_regulative_exception INTO DATA(lx_regulative_exception).
+              lo_message = cl_bali_message_setter=>create( severity = if_bali_constants=>c_severity_warning
+                                                           id = 'ZETR_COMMON'
+                                                           number = '004'
+                                                           variable_1 = CONV #( ls_company-bukrs )
+                                                           variable_2 = CONV #( ls_company-title ) ).
+              lo_log->add_item( lo_message ).
               DATA(lx_exception) = cl_bali_exception_setter=>create( severity = if_bali_constants=>c_severity_error
                                                                      exception = lx_regulative_exception ).
-              TRY.
-                  lo_log->add_item( lx_exception ).
-                CATCH cx_bali_runtime.
-              ENDTRY.
+              lo_log->add_item( lx_exception ).
           ENDTRY.
           CLEAR: lt_invoice_list, lo_invoice_operations.
         ENDLOOP.
-      CATCH cx_root INTO DATA(lx_root).
-        lx_exception = cl_bali_exception_setter=>create( severity = if_bali_constants=>c_severity_error
-                                                         exception = lx_root ).
-        TRY.
-            lo_log->add_item( lx_exception ).
-          CATCH cx_bali_runtime.
-        ENDTRY.
-    ENDTRY.
-
-    TRY.
         cl_bali_log_db=>get_instance( )->save_log( log = lo_log assign_to_current_appl_job = abap_true ).
       CATCH cx_bali_runtime.
     ENDTRY.
