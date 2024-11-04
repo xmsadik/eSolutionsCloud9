@@ -211,7 +211,7 @@
     "SRCROW1":8,
     "SRCCOLUMN1":17,
     "SRCROW2":8,
-    "SRCCOLUMN2":56,
+    "SRCCOLUMN2":62,
     "REFCLSNAME":"",
     "REFINTNAME":"",
     "REFCMPNAME":"",
@@ -221,8 +221,8 @@
     "BCMTDCOM":"",
     "BCMTDSYN":0,
     "BCEVTCAT":0,
-    "TYPESRC_LENG":42,
-    "TYPESRC":"mt_users        TYPE TABLE OF zinf_users\r\n"
+    "TYPESRC_LENG":48,
+    "TYPESRC":"mt_users        TYPE TABLE OF zetr_t_serv_user\r\n"
    },
    {
     "CLSNAME":"ZCL_ETR_TRIAL_BALANCE_SERVICE",

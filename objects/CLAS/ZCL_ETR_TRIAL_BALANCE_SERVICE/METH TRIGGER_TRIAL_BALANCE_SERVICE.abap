@@ -14,16 +14,8 @@
       DATA(lv_filter_begda) = iv_gjahr && '-' && iv_monat && '-01T00:00:00'.
       DATA(lv_filter_endda) = lv_filter_begda.
 
-      lv_temp_datum   = iv_gjahr && iv_monat && '01'.
-      zinf_regulative_common=>rp_last_day_of_months(
-        EXPORTING
-          day_in            = lv_temp_datum
-        IMPORTING
-          last_day_of_month = lv_temp_endda
-        EXCEPTIONS
-          day_in_no_date    = 1
-          OTHERS            = 2
-      ).
+      lv_temp_datum = iv_gjahr && iv_monat && '01'.
+      lv_temp_endda = zcl_etr_regulative_common=>get_month_last_day( lv_temp_datum ).
       lv_filter_begda = lv_filter_begda(4) && |-| && lv_filter_begda+5(2) && |-| && lv_filter_begda+8(2) && |T00:00:00|.
       lv_filter_endda = lv_temp_endda(4) && |-| && lv_temp_endda+4(2) && |-| && lv_temp_endda+6(2) && |T00:00:00|.
     ENDIF.

@@ -5,7 +5,7 @@ CLASS zcl_etr_trial_balance_service DEFINITION
 
   PUBLIC SECTION.
 
-    CLASS-DATA:  mt_users        TYPE TABLE OF zinf_users.
+    CLASS-DATA:  mt_users        TYPE TABLE OF zetr_t_serv_user.
 
     CLASS-METHODS :
       trigger_trial_balance_service IMPORTING VALUE(iv_company_code) TYPE bukrs
