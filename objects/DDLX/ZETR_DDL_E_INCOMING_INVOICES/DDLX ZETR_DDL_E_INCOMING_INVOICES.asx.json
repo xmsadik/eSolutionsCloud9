@@ -1747,34 +1747,41 @@
     "DDLANGUAGE":"T",
     "ELEMENT":"COMPANYCODE",
     "NAME":"UI.LINEITEM$4$.LABEL",
-    "TEXT":"İşleme Durumu Değiştir"
+    "TEXT":"Muhasebeleşme Durumu Değiştir"
    },
    {
     "DDLXNAME":"ZETR_DDL_E_INCOMING_INVOICES",
     "DDLANGUAGE":"T",
     "ELEMENT":"COMPANYCODE",
     "NAME":"UI.LINEITEM$5$.LABEL",
-    "TEXT":"Arşivle"
+    "TEXT":"İşleme Durumu Değiştir"
    },
    {
     "DDLXNAME":"ZETR_DDL_E_INCOMING_INVOICES",
     "DDLANGUAGE":"T",
     "ELEMENT":"COMPANYCODE",
     "NAME":"UI.LINEITEM$6$.LABEL",
-    "TEXT":"Durum Güncelle"
+    "TEXT":"Arşivle"
    },
    {
     "DDLXNAME":"ZETR_DDL_E_INCOMING_INVOICES",
     "DDLANGUAGE":"T",
     "ELEMENT":"COMPANYCODE",
     "NAME":"UI.LINEITEM$7$.LABEL",
-    "TEXT":"Reddedildi Olarak İşaretle"
+    "TEXT":"Durum Güncelle"
    },
    {
     "DDLXNAME":"ZETR_DDL_E_INCOMING_INVOICES",
     "DDLANGUAGE":"T",
     "ELEMENT":"COMPANYCODE",
     "NAME":"UI.LINEITEM$8$.LABEL",
+    "TEXT":"Reddedildi Olarak İşaretle"
+   },
+   {
+    "DDLXNAME":"ZETR_DDL_E_INCOMING_INVOICES",
+    "DDLANGUAGE":"T",
+    "ELEMENT":"COMPANYCODE",
+    "NAME":"UI.LINEITEM$9$.LABEL",
     "TEXT":"Yanıt Gönder"
    },
    {

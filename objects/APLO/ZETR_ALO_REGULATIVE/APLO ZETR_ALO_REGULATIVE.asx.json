@@ -17,6 +17,11 @@
     "SPRAS":"E",
     "OBJECT":"ZETR_ALO_REGULATIVE",
     "OBJTXT":"eSolutions Log Object"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "OBJTXT":"eÇözümler Log Objesi"
    }
   ]
  },
@@ -109,6 +114,54 @@
     "OBJECT":"ZETR_ALO_REGULATIVE",
     "SUBOBJECT":"INVOICE_USERS_JOB",
     "SUBOBJTXT":"Invoice Users Job Log"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"DELIVERY_GETINC_JOB",
+    "SUBOBJTXT":"Gelen eİrsaliye İndirme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"DELIVERY_SAVE_JOB",
+    "SUBOBJTXT":"Giden eİrsaliye Kaydetme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"DELIVERY_UPDOUT_JOB",
+    "SUBOBJTXT":"Giden eİrsaliye Durum Güncelleme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"DELIVERY_USERS_JOB",
+    "SUBOBJTXT":"eİrsaliye Kullanıcıları Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"INVOICE_GETINC_JOB",
+    "SUBOBJTXT":"Gelen eFatura İndirme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"INVOICE_SAVE_JOB",
+    "SUBOBJTXT":"Giden eFatura Kaydetme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"INVOICE_UPDOUT_JOB",
+    "SUBOBJTXT":"Giden eİrsaliye Durum Güncelleme Job"
+   },
+   {
+    "SPRAS":"T",
+    "OBJECT":"ZETR_ALO_REGULATIVE",
+    "SUBOBJECT":"INVOICE_USERS_JOB",
+    "SUBOBJTXT":"eFatura Kullanıcıları Job"
    }
   ]
  },

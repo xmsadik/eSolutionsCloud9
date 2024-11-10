@@ -4,10 +4,10 @@
   "data":
   [
    {
-    "ROLLNAME":"ZETR_E_ACCOK",
+    "ROLLNAME":"ZETR_E_TCTID",
     "AS4LOCAL":"L",
     "AS4VERS":0,
-    "DOMNAME":"ABAP_BOOLEAN",
+    "DOMNAME":"",
     "ROUTPUTLEN":0,
     "MEMORYID":"",
     "LOGFLAG":"",
@@ -28,15 +28,15 @@
     "SHLPFIELD":"",
     "DEFFDNAME":"",
     "DATATYPE":"CHAR",
-    "LENG":1,
+    "LENG":11,
     "DECIMALS":0,
-    "OUTPUTLEN":1,
+    "OUTPUTLEN":11,
     "LOWERCASE":"",
     "SIGNFLAG":"",
     "CONVEXIT":"",
-    "VALEXI":"X",
+    "VALEXI":"",
     "ENTITYTAB":"",
-    "REFKIND":"D",
+    "REFKIND":"",
     "REFTYPE":"",
     "PROXYTYPE":"",
     "LTRFLDDIS":"",
@@ -51,26 +51,26 @@
   "data":
   [
    {
-    "ROLLNAME":"ZETR_E_ACCOK",
+    "ROLLNAME":"ZETR_E_TCTID",
     "DDLANGUAGE":"E",
     "AS4LOCAL":"N",
     "AS4VERS":0,
-    "DDTEXT":"Acoounting done",
-    "REPTEXT":"Acoounting done",
-    "SCRTEXT_S":"Acoounting",
-    "SCRTEXT_M":"Acoounting done",
-    "SCRTEXT_L":"Acoounting done"
+    "DDTEXT":"Transport company tax ID",
+    "REPTEXT":"Transport company tax ID",
+    "SCRTEXT_S":"Trns.cmp.",
+    "SCRTEXT_M":"Transport company",
+    "SCRTEXT_L":"Transport company tax ID"
    },
    {
-    "ROLLNAME":"ZETR_E_ACCOK",
+    "ROLLNAME":"ZETR_E_TCTID",
     "DDLANGUAGE":"T",
     "AS4LOCAL":"N",
     "AS4VERS":0,
-    "DDTEXT":"Muhasebeleşme tamamlandı",
-    "REPTEXT":"Muhasebeleşme tamamlandı",
-    "SCRTEXT_S":"Muh.OK",
-    "SCRTEXT_M":"Muh.tamamlandı",
-    "SCRTEXT_L":"Muhasebeleşme tamamlandı"
+    "DDTEXT":"Taşıyıcı firma vergi no",
+    "REPTEXT":"Taşıyıcı firma vergi no",
+    "SCRTEXT_S":"Taş.firma",
+    "SCRTEXT_M":"Taşıyıcı firma",
+    "SCRTEXT_L":"Taşıyıcı firma vergi no"
    }
   ]
  },
@@ -79,7 +79,7 @@
   "data":
   [
    {
-    "TYPENAME":"ZETR_E_ACCOK",
+    "TYPENAME":"ZETR_E_TCTID",
     "STATE":"N",
     "TYPEKIND":"DTEL"
    }
@@ -92,7 +92,7 @@
    {
     "PGMID":"R3TR",
     "OBJECT":"DTEL",
-    "OBJ_NAME":"ZETR_E_ACCOK",
+    "OBJ_NAME":"ZETR_E_TCTID",
     "KORRNUM":"",
     "SRCSYSTEM":"...",
     "AUTHOR":"SAP_CUSTOMER",
@@ -109,8 +109,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2024-10-08",
-    "CHECK_DATE":"2024-10-08",
+    "CREATED_ON":"2024-11-10",
+    "CHECK_DATE":"2024-11-10",
     "CHECK_CFG":""
    }
   ]

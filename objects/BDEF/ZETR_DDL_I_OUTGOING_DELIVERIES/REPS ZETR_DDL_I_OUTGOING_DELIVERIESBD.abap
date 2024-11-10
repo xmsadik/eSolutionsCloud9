@@ -178,6 +178,8 @@ authorization dependent by _outgoingDeliveries
   delete;
 
   field ( readonly ) DocumentUUID;
+  determination changeTransportCompanyTitle on modify { field TransportCompanyTaxID; }
+  side effects { field TransportCompanyTaxID affects field TransportCompanyTitle; }
 
   association _outgoingDeliveries;
 

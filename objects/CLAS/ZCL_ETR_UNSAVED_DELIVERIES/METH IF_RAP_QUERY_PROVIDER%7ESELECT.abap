@@ -93,7 +93,7 @@
               AND i~GoodsMovementIsCancelled = ''
             APPENDING TABLE @lt_deliveries.
         ENDIF.
-        CHECK lt_deliveries IS NOT INITIAL.
+*        CHECK lt_deliveries IS NOT INITIAL.
         SORT lt_deliveries BY bukrs awtyp belnr gjahr.
 
         LOOP AT lt_deliveries INTO DATA(ls_delivery).
@@ -135,11 +135,12 @@
             FROM zetr_ddl_i_outgoing_deliveries
             WHERE documentuuid IN @lt_docui_range
             INTO CORRESPONDING FIELDS OF TABLE @lt_output.
-          IF io_request->is_total_numb_of_rec_requested(  ).
-            io_response->set_total_number_of_records( iv_total_number_of_records = lines( lt_output ) ).
-          ENDIF.
-          io_response->set_data( it_data = lt_output ).
         ENDIF.
+
+        IF io_request->is_total_numb_of_rec_requested(  ).
+          io_response->set_total_number_of_records( iv_total_number_of_records = lines( lt_output ) ).
+        ENDIF.
+        io_response->set_data( it_data = lt_output ).
 
       CATCH cx_rap_query_filter_no_range.
     ENDTRY.

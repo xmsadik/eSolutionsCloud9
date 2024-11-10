@@ -99,6 +99,28 @@
     "DOMVAL_LD":"",
     "DOMVAL_HD":"",
     "DOMVALUE_L":"T"
+   },
+   {
+    "DOMNAME":"ZETR_D_TRNST",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":1,
+    "AS4VERS":0,
+    "DDTEXT":"Sürücü",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"D"
+   },
+   {
+    "DOMNAME":"ZETR_D_TRNST",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":2,
+    "AS4VERS":0,
+    "DDTEXT":"Dorse",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"T"
    }
   ]
  },

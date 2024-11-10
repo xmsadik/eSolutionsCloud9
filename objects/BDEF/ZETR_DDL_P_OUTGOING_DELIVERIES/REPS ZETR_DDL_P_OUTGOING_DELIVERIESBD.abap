@@ -1,5 +1,6 @@
 projection;
 strict ( 1 );
+use side effects;
 
 define behavior for zetr_ddl_p_outgoing_deliveries alias OutgoingDeliveries
 {
@@ -39,7 +40,7 @@ define behavior for zetr_ddl_p_outgoing_deltrns alias Transporters
 define behavior for zetr_ddl_p_outgoing_deltdat alias TransportHeader
 {
   use update;
-  use delete;
+//  use delete;
 
   use association _outgoingDeliveries;
 }

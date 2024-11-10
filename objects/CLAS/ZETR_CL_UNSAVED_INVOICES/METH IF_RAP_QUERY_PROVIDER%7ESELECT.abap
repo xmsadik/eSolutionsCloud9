@@ -89,7 +89,7 @@
               AND reversedocument = ''
             APPENDING TABLE @lt_invoices.
         ENDIF.
-        CHECK lt_invoices IS NOT INITIAL.
+*        CHECK lt_invoices IS NOT INITIAL.
         SORT lt_invoices BY bukrs awtyp belnr gjahr.
 
         LOOP AT lt_invoices INTO DATA(ls_invoice).
@@ -135,12 +135,11 @@
             FROM zetr_ddl_i_outgoing_invoices
             WHERE documentuuid IN @lt_docui_range
             INTO CORRESPONDING FIELDS OF TABLE @lt_output.
-          IF io_request->is_total_numb_of_rec_requested(  ).
-            io_response->set_total_number_of_records( iv_total_number_of_records = lines( lt_output ) ).
-          ENDIF.
-          io_response->set_data( it_data = lt_output ).
         ENDIF.
-
+        IF io_request->is_total_numb_of_rec_requested(  ).
+          io_response->set_total_number_of_records( iv_total_number_of_records = lines( lt_output ) ).
+        ENDIF.
+        io_response->set_data( it_data = lt_output ).
       CATCH cx_rap_query_filter_no_range.
     ENDTRY.
   ENDMETHOD.

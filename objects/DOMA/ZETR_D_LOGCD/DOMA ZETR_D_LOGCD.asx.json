@@ -1025,10 +1025,32 @@
     "AS4LOCAL":"N",
     "VALPOS":30,
     "AS4VERS":0,
-    "DDTEXT":"elge Güncellendi",
+    "DDTEXT":"Belge Güncellendi",
     "DOMVAL_LD":"",
     "DOMVAL_HD":"",
     "DOMVALUE_L":"UPDATED"
+   },
+   {
+    "DOMNAME":"ZETR_D_LOGCD",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":31,
+    "AS4VERS":0,
+    "DDTEXT":"Muhasebeleşme durumu değiştirildi",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"ACCSTAT"
+   },
+   {
+    "DOMNAME":"ZETR_D_LOGCD",
+    "DDLANGUAGE":"T",
+    "AS4LOCAL":"N",
+    "VALPOS":32,
+    "AS4VERS":0,
+    "DDTEXT":"Job Log",
+    "DOMVAL_LD":"",
+    "DOMVAL_HD":"",
+    "DOMVALUE_L":"JOBLOG"
    }
   ]
  },

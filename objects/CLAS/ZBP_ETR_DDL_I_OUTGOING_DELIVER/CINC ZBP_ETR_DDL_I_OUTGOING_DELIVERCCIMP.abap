@@ -1,3 +1,40 @@
+CLASS lhc_transportheader DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+  PRIVATE SECTION.
+
+    METHODS changeTransportCompanyTitle FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR TransportHeader~changeTransportCompanyTitle.
+
+ENDCLASS.
+
+CLASS lhc_transportheader IMPLEMENTATION.
+
+  METHOD changeTransportCompanyTitle.
+    READ ENTITIES OF zetr_ddl_i_outgoing_deliveries IN LOCAL MODE
+          ENTITY TransportHeader
+            FIELDS ( TransportCompanyTaxID TransportCompanyTitle )
+            WITH CORRESPONDING #( keys )
+        RESULT DATA(lt_transport_data).
+    CHECK lt_transport_data IS NOT INITIAL.
+    READ TABLE lt_transport_data ASSIGNING FIELD-SYMBOL(<ls_transport_data>) INDEX 1.
+    CHECK sy-subrc = 0 AND <ls_transport_data>-TransportCompanyTaxID IS NOT INITIAL.
+    SELECT SINGLE title
+      FROM zetr_t_othp
+      WHERE prtty = 'S'
+        AND taxid = @<ls_transport_data>-TransportCompanyTaxID
+      INTO @<ls_transport_data>-TransportCompanyTitle.
+    CHECK sy-subrc = 0.
+
+    MODIFY ENTITIES OF zetr_ddl_i_outgoing_deliveries IN LOCAL MODE
+      ENTITY TransportHeader
+      UPDATE FIELDS ( TransportCompanyTitle )
+             WITH VALUE #( FOR transport_data IN lt_transport_data ( documentuuid = transport_data-DocumentUUID
+                                                     TransportCompanyTitle = transport_data-TransportCompanyTitle
+                                                     %control-TransportCompanyTitle = if_abap_behv=>mk-on ) ).
+  ENDMETHOD.
+
+ENDCLASS.
+
 CLASS lhc_zetr_ddl_i_outgoing_delive DEFINITION INHERITING FROM cl_abap_behavior_handler.
   PRIVATE SECTION.
 

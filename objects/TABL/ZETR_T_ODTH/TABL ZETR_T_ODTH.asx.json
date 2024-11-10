@@ -813,7 +813,7 @@
     "POSITION":6,
     "KEYFLAG":"",
     "MANDATORY":"",
-    "ROLLNAME":"ZETR_E_TAXID",
+    "ROLLNAME":"ZETR_E_TCTID",
     "CHECKTABLE":"",
     "ADMINFIELD":"0",
     "INTTYPE":"C",

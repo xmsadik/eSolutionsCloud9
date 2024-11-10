@@ -95,6 +95,7 @@
          AND item~accountingdocument = @ms_document-belnr
          AND item~fiscalyear = @ms_document-gjahr
          AND item~Ledger = '0L'
+         AND item~AccountingDocumentItem <> '000'
       INTO TABLE @ms_accdoc_data-bseg.
     IF sy-subrc IS INITIAL.
       LOOP AT ms_accdoc_data-bseg INTO DATA(ls_bseg) USING KEY by_koart WHERE koart = 'D'
