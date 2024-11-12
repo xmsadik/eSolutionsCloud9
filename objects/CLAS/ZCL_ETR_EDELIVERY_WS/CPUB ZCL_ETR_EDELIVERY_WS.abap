@@ -30,6 +30,7 @@ CLASS zcl_etr_edelivery_ws DEFINITION
     TYPES radsc TYPE zetr_e_radsc.
     TYPES rsend TYPE zetr_e_rsend.
     TYPES envui TYPE zetr_e_envui.
+    TYPES dlvii TYPE zetr_e_docii.
     TYPES dlvui TYPE zetr_e_duich.
     TYPES dlvno TYPE zetr_e_docno.
     TYPES dlvqi TYPE zetr_e_docqi.

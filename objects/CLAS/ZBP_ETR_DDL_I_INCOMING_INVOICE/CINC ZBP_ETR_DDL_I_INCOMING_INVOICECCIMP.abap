@@ -543,6 +543,9 @@ CLASS lhc_InvoiceList IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD changeAccountingStatus.
+    READ TABLE keys INTO DATA(ls_key) INDEX 1.
+    CHECK sy-subrc = 0 AND ls_key-%param-accok IS NOT INITIAL.
+
     READ ENTITIES OF zetr_ddl_i_incoming_invoices IN LOCAL MODE
       ENTITY InvoiceList
       ALL FIELDS WITH
@@ -550,7 +553,7 @@ CLASS lhc_InvoiceList IMPLEMENTATION.
       RESULT DATA(invoices).
 
     LOOP AT invoices ASSIGNING FIELD-SYMBOL(<invoice>).
-      <invoice>-AccountingDone = SWITCH #( <invoice>-AccountingDone WHEN abap_false THEN abap_true ELSE abap_false ).
+      <invoice>-AccountingDone = ls_key-%param-accok.
     ENDLOOP.
 
     TRY.

@@ -74,7 +74,7 @@ authorization master ( instance )
   action ( features : instance ) addNote parameter ZETR_DDL_I_NOTE_SELECTION result [1] $self;
   action ( features : instance ) changePrintStatus result [1] $self;
   action ( features : instance ) changeProcessStatus result [1] $self;
-  action ( features : instance ) changeAccountingStatus result [1] $self;
+  action ( features : instance ) changeAccountingStatus parameter ZETR_DDL_I_ACCSTAT_SELECTION result [1] $self;
   action ( features : instance ) archiveInvoices result [1] $self;
   action ( features : instance ) statusUpdate result [1] $self;
   //  action ( features : instance ) downloadInvoices result [1] $self;

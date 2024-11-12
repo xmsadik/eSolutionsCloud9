@@ -16,11 +16,22 @@
              yerelbelgeoid           TYPE string,
              yanitettn               TYPE string,
            END OF ty_status.
-    DATA: lv_request_xml  TYPE string,
-          lv_response_xml TYPE string,
-          ls_status       TYPE ty_status.
+    DATA: lv_request_xml      TYPE string,
+          lv_response_xml     TYPE string,
+          ls_status           TYPE ty_status,
+          lv_docii            TYPE string,
+          lv_doctype          TYPE string,
+          ls_document_numbers TYPE zetr_s_document_numbers.
 
     FIELD-SYMBOLS: <lv_return_field> TYPE any.
+
+    IF is_document_numbers-docii IS INITIAL.
+      lv_doctype = 'YEREL'.
+      lv_docii   = is_document_numbers-docui.
+    ELSE.
+      lv_doctype = 'OID'.
+      lv_docii   = is_document_numbers-docii.
+    ENDIF.
 
     CONCATENATE
     '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.connector.uut.cs.com.tr/">'
@@ -36,8 +47,8 @@
        '<ser:gidenBelgeDurumSorgulaExt>'
            '<vergiTcKimlikNo>' mv_company_taxid '</vergiTcKimlikNo>'
            '<parametreler>'
-              '<belgeNo>' is_document_numbers-docii '</belgeNo>'
-              '<belgeNoTipi>OID</belgeNoTipi>'
+              '<belgeNo>' lv_docii '</belgeNo>'
+              '<belgeNoTipi>' lv_doctype '</belgeNoTipi>'
               '<belgeTuru>IRSALIYE</belgeTuru>'
               '<donusTipiVersiyon>6.0</donusTipiVersiyon>'
            '</parametreler>'
@@ -57,6 +68,14 @@
         <lv_return_field> = ls_xml_line-value.
       ENDIF.
     ENDLOOP.
+
+    IF is_document_numbers-docii IS INITIAL AND ls_status-yerelbelgeoid IS NOT INITIAL.
+      CLEAR ls_document_numbers.
+      ls_document_numbers-docii = ls_status-yerelbelgeoid.
+      rs_status = outgoing_delivery_get_status( is_document_numbers = ls_document_numbers ).
+      rs_status-dlvii = ls_status-yerelbelgeoid.
+      EXIT.
+    ENDIF.
 
     IF ls_status-durum = 1 OR ls_status-durum = 2.
       rs_status-stacd = ls_status-durum.
@@ -96,4 +115,5 @@
     rs_status-dlvui = ls_status-ettn.
     rs_status-dlvqi = ls_status-ettn.
     rs_status-ruuid = ls_status-yanitettn.
+    rs_status-dlvii = ls_status-yerelbelgeoid.
   ENDMETHOD.

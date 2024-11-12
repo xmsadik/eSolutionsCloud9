@@ -30,7 +30,12 @@ authorization master ( instance )
   StatusCode,
   StatusDetail,
   Response,
-  TRAStatusCode;
+  TRAStatusCode,
+  PartnerNumber,
+  Plant,
+  StorageLocation,
+  ReceivingPlant,
+  ReceivingStorageLocation;
 
   mapping for zetr_t_ogdlv
     {
@@ -154,6 +159,8 @@ authorization dependent by _outgoingDeliveries
 
   field ( readonly ) DocumentUUID;
   field ( readonly : update ) TransporterType, Transporter;
+  determination changeTransporterNames on modify { field Transporter; }
+  side effects { field Transporter affects $self; }
 
   association _outgoingDeliveries;
 

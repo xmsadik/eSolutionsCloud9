@@ -1320,7 +1320,7 @@
     "TABLEOF":"",
     "SRCROW1":26,
     "SRCCOLUMN1":10,
-    "SRCROW2":38,
+    "SRCROW2":39,
     "SRCCOLUMN2":44,
     "REFCLSNAME":"",
     "REFINTNAME":"",
@@ -1331,8 +1331,8 @@
     "BCMTDCOM":"",
     "BCMTDSYN":0,
     "BCEVTCAT":0,
-    "TYPESRC_LENG":483,
-    "TYPESRC":"BEGIN OF mty_outgoing_document_status.\r\n    TYPES stacd TYPE zetr_e_stacd.\r\n    TYPES staex TYPE zetr_e_staex.\r\n    TYPES resst TYPE zetr_e_resst.\r\n    TYPES radsc TYPE zetr_e_radsc.\r\n    TYPES rsend TYPE zetr_e_rsend.\r\n    TYPES envui TYPE zetr_e_envui.\r\n    TYPES dlvui TYPE zetr_e_duich.\r\n    TYPES dlvno TYPE zetr_e_docno.\r\n    TYPES dlvqi TYPE zetr_e_docqi.\r\n    TYPES ruuid TYPE zetr_e_ruuid.\r\n    TYPES itmrs TYPE zetr_e_itmrs.\r\n    TYPES END OF mty_outgoing_document_status\r\n"
+    "TYPESRC_LENG":519,
+    "TYPESRC":"BEGIN OF mty_outgoing_document_status.\r\n    TYPES stacd TYPE zetr_e_stacd.\r\n    TYPES staex TYPE zetr_e_staex.\r\n    TYPES resst TYPE zetr_e_resst.\r\n    TYPES radsc TYPE zetr_e_radsc.\r\n    TYPES rsend TYPE zetr_e_rsend.\r\n    TYPES envui TYPE zetr_e_envui.\r\n    TYPES dlvii TYPE zetr_e_docii.\r\n    TYPES dlvui TYPE zetr_e_duich.\r\n    TYPES dlvno TYPE zetr_e_docno.\r\n    TYPES dlvqi TYPE zetr_e_docqi.\r\n    TYPES ruuid TYPE zetr_e_ruuid.\r\n    TYPES itmrs TYPE zetr_e_itmrs.\r\n    TYPES END OF mty_outgoing_document_status\r\n"
    },
    {
     "CLSNAME":"ZCL_ETR_EDELIVERY_WS",

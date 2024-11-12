@@ -7,9 +7,9 @@
     "SRVDNAME":"ZETR_DDL_D_INCOMING_INVOICES",
     "VERSION":"A",
     "CHANGED_BY":"SAP_CUSTOMER",
-    "CHANGED_ON":"2024-01-02",
-    "CHANGED_AT":"10:14:19",
-    "DT_UUID":"5FCF0C80B8B81EDEAAAAF61CB8E19EFB",
+    "CHANGED_ON":"2024-11-11",
+    "CHANGED_AT":"06:31:38",
+    "DT_UUID":"CB92D17136801EEFA7FED35ECC56E289",
     "SOURCE_ORIGIN":"0",
     "SRVD_SOURCE_TYPE":"S",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -35,7 +35,7 @@
    {
     "SRVDNAME":"ZETR_DDL_D_INCOMING_INVOICES",
     "VERSION":"A",
-    "SOURCE":"@EndUserText.label: 'Incoming Invoices'\r\ndefine service ZETR_DDL_D_INCOMING_INVOICES {\r\n  expose zetr_ddl_p_incoming_invoices as InvoiceList;\r\n  expose zetr_ddl_p_incoming_invlogs  as InvoiceLogs;\r\n  expose zetr_ddl_p_incoming_invcont  as InvoiceContents;\r\n  expose zetr_ddl_vh_reject_types     as RejectTypes;\r\n  expose zetr_ddl_vh_app_response     as ApplicationResponse;\r\n}"
+    "SOURCE":"@EndUserText.label: 'Incoming Invoices'\r\ndefine service ZETR_DDL_D_INCOMING_INVOICES {\r\n  expose zetr_ddl_p_incoming_invoices as InvoiceList;\r\n  expose zetr_ddl_p_incoming_invlogs  as InvoiceLogs;\r\n  expose zetr_ddl_p_incoming_invcont  as InvoiceContents;\r\n  expose zetr_ddl_vh_reject_types     as RejectTypes;\r\n  expose zetr_ddl_vh_app_response     as ApplicationResponse;\r\n  expose ZETR_DDL_I_ACCSTAT_SELECTION as AccountingStatus;\r\n}"
    }
   ]
  },
@@ -66,6 +66,15 @@
   "table":"SRVD_RT_ENTITIES",
   "data":
   [
+   {
+    "SRVDNAME":"ZETR_DDL_D_INCOMING_INVOICES",
+    "SERVICE":"ZETR_DDL_D_INCOMING_INVOICES",
+    "EXPOSED_ARTIFACT":"ZETR_DDL_I_ACCSTAT_SELECTION",
+    "EXPOSED_ARTIFACT_TYPE":"E",
+    "EXPOSED_ALIAS":"ACCOUNTINGSTATUS",
+    "EXPOSED_ALIAS_RAW":"AccountingStatus",
+    "INCL_SERVICE":""
+   },
    {
     "SRVDNAME":"ZETR_DDL_D_INCOMING_INVOICES",
     "SERVICE":"ZETR_DDL_D_INCOMING_INVOICES",
@@ -122,8 +131,8 @@
     "SERVICE":"ZETR_DDL_D_INCOMING_INVOICES",
     "SERVICE_RAW":"ZETR_DDL_D_INCOMING_INVOICES",
     "SOURCE_TYPE":"S",
-    "DT_UUID":"5FCF0C80B8B81EDEAAAAF61CB8E19EFB",
-    "RT_HASH":"E684CEB823F0EBA413B81C44780554C8F1A75AE9",
+    "DT_UUID":"CB92D17136801EEFA7FED35ECC56E289",
+    "RT_HASH":"59062F0175D922383F6BF2E480C4DF4CDE0AAC55",
     "GEN_VERSION":"0"
    }
   ]

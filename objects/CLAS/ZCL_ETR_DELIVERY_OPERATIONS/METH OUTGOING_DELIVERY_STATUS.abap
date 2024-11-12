@@ -34,6 +34,9 @@
       IF rs_status-dlvui IS INITIAL AND ls_document-dlvui IS NOT INITIAL.
         rs_status-dlvui = ls_document-dlvui.
       ENDIF.
+      IF rs_status-dlvii IS INITIAL AND ls_document-dlvii IS NOT INITIAL.
+        rs_status-dlvii = ls_document-dlvii.
+      ENDIF.
 
       IF rs_status-resst = '1' AND rs_status-itmrs IS INITIAL.
         DATA(lv_response_ubl) = lo_edelivery_service->outgoing_delivery_respdown( is_document_numbers = VALUE #( docui = iv_document_uid
@@ -69,6 +72,7 @@
             radsc = @rs_status-radsc,
             rsend = @rs_status-rsend,
             envui = @rs_status-envui,
+            dlvii = @rs_status-dlvii,
             dlvui = @rs_status-dlvui,
             dlvno = @rs_status-dlvno,
             dlvqi = @rs_status-dlvqi,

@@ -1,3 +1,51 @@
+CLASS lhc_transporters DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+  PRIVATE SECTION.
+
+    METHODS changeTransporterNames FOR DETERMINE ON MODIFY
+      IMPORTING keys FOR Transporters~changeTransporterNames.
+
+ENDCLASS.
+
+CLASS lhc_transporters IMPLEMENTATION.
+
+  METHOD changeTransporterNames.
+    READ ENTITIES OF zetr_ddl_i_outgoing_deliveries IN LOCAL MODE
+          ENTITY Transporters
+            FIELDS ( TransporterType Transporter )
+            WITH CORRESPONDING #( keys )
+        RESULT DATA(lt_transport_data).
+    CHECK lt_transport_data IS NOT INITIAL AND line_exists( lt_transport_data[ TransporterType = 'D' ] ).
+    LOOP AT lt_transport_data ASSIGNING FIELD-SYMBOL(<ls_transport_data>).
+      CHECK <ls_transport_data>-Transporter IS NOT INITIAL.
+      SELECT SINGLE namef, namel
+        FROM zetr_t_othp
+        WHERE prtty = 'D'
+          AND taxid = @<ls_transport_data>-Transporter
+        INTO (@<ls_transport_data>-FirstName,@<ls_transport_data>-LastName).
+      IF sy-subrc <> 0.
+        SELECT SINGLE namef, namel
+          FROM zetr_t_odti
+          WHERE trnst = 'D'
+            AND trnsp = @<ls_transport_data>-Transporter
+          INTO (@<ls_transport_data>-FirstName,@<ls_transport_data>-LastName).
+      ENDIF.
+    ENDLOOP.
+
+    MODIFY ENTITIES OF zetr_ddl_i_outgoing_deliveries IN LOCAL MODE
+      ENTITY Transporters
+      UPDATE FIELDS ( FirstName LastName )
+             WITH VALUE #( FOR transport_data IN lt_transport_data ( DocumentUUID = transport_data-DocumentUUID
+                                                                     TransporterType = transport_data-TransporterType
+                                                                     Transporter = transport_data-Transporter
+                                                                     FirstName = transport_data-FirstName
+                                                                     LastName = transport_data-LastName
+                                                                     %control-FirstName = if_abap_behv=>mk-on
+                                                                     %control-LastName = if_abap_behv=>mk-on ) ).
+  ENDMETHOD.
+
+ENDCLASS.
+
 CLASS lhc_transportheader DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
   PRIVATE SECTION.
@@ -23,6 +71,12 @@ CLASS lhc_transportheader IMPLEMENTATION.
       WHERE prtty = 'S'
         AND taxid = @<ls_transport_data>-TransportCompanyTaxID
       INTO @<ls_transport_data>-TransportCompanyTitle.
+    IF sy-subrc <> 0.
+      SELECT SINGLE title
+        FROM zetr_t_odth
+        WHERE taxid = @<ls_transport_data>-TransportCompanyTaxID
+        INTO @<ls_transport_data>-TransportCompanyTitle.
+    ENDIF.
     CHECK sy-subrc = 0.
 
     MODIFY ENTITIES OF zetr_ddl_i_outgoing_deliveries IN LOCAL MODE
@@ -90,6 +144,21 @@ CLASS lhc_zetr_ddl_i_outgoing_delive IMPLEMENTATION.
                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled  )
                         %features-%delete = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2'
                                                    THEN if_abap_behv=>fc-o-disabled ELSE if_abap_behv=>fc-o-enabled  )
+                        %field-PartnerNumber = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2' AND ls_delivery-DocumentType <> 'MANU'
+                                                     THEN if_abap_behv=>fc-f-read_only
+                                                   ELSE if_abap_behv=>fc-f-unrestricted  )
+                        %field-Plant = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2' AND ls_delivery-DocumentType <> 'MANU'
+                                                     THEN if_abap_behv=>fc-f-read_only
+                                                   ELSE if_abap_behv=>fc-f-unrestricted  )
+                        %field-StorageLocation = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2' AND ls_delivery-DocumentType <> 'MANU'
+                                                     THEN if_abap_behv=>fc-f-read_only
+                                                   ELSE if_abap_behv=>fc-f-unrestricted  )
+                        %field-ReceivingPlant = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2' AND ls_delivery-DocumentType <> 'MANU'
+                                                     THEN if_abap_behv=>fc-f-read_only
+                                                   ELSE if_abap_behv=>fc-f-unrestricted  )
+                        %field-ReceivingStorageLocation = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2' AND ls_delivery-DocumentType <> 'MANU'
+                                                     THEN if_abap_behv=>fc-f-read_only
+                                                   ELSE if_abap_behv=>fc-f-unrestricted  )
                         %field-ProfileID = COND #( WHEN ls_delivery-statuscode <> '' AND ls_delivery-statuscode <> '2'
                                                      THEN if_abap_behv=>fc-f-read_only
                                                    ELSE if_abap_behv=>fc-f-mandatory  )
@@ -470,6 +539,7 @@ CLASS lhc_zetr_ddl_i_outgoing_delive IMPLEMENTATION.
           <deliveryline>-IntegratorDocumentID = ls_status-dlvii.
           <deliveryline>-ResponseUUID = ls_status-ruuid.
           <deliveryline>-ItemResponse = ls_status-itmrs.
+          <deliveryline>-IntegratorDocumentID = ls_status-dlvii.
 
         CATCH zcx_etr_regulative_exception INTO DATA(lx_exception).
           DATA(lv_error) = CONV bapi_msg( lx_exception->get_text( ) ).

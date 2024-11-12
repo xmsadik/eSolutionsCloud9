@@ -57,5 +57,6 @@
         INTO @DATA(ls_partner_data).
       ms_outdel_data-taxid = COND #( WHEN ls_partner_data-stcd3 IS NOT INITIAL THEN ls_partner_data-stcd3 ELSE ls_partner_data-stcd2 ).
       ms_outdel_data-tax_office = ls_partner_data-stcd1.
+      ms_outdel_data-address_number = ls_partner_data-adrnr.
     ENDIF.
   ENDMETHOD.

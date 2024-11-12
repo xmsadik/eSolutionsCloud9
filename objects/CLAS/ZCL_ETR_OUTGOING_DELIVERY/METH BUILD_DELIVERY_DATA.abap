@@ -6,6 +6,8 @@
         build_delivery_data_mkpf( ).
       WHEN 'LIKP'.
         build_delivery_data_likp( ).
+      WHEN 'MANU'.
+        build_delivery_data_manu( ).
     ENDCASE.
 
 *    IF mv_barcode IS NOT INITIAL.

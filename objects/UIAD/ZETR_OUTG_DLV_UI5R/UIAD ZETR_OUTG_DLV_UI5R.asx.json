@@ -33,7 +33,7 @@
     "REFRESH_INTERVALL":0,
     "DISPLAY_NUMBER_UNIT":"",
     "FLAVOR_ID":"",
-    "CHANGED_AT":"+020241110185106",
+    "CHANGED_AT":"+020241112064624",
     "CHANGED_BY":"SAP_CUSTOMER",
     "MASTERLANG":"",
     "ACH_COMPONENT":"",
@@ -85,6 +85,15 @@
     "TILE_SUBTITLE":"",
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":""
+   },
+   {
+    "LANGU":"T",
+    "APP_ID":"ZETR_OUTG_DLV_UI5R",
+    "TILE_ID":"UI5R_F1A7F4BB54AEA698B04D8A294BAB6CBD74CB31FA_AL",
+    "TILE_TITLE":"eÇözümler - Giden İrsaliyeler",
+    "TILE_SUBTITLE":"",
+    "TILE_KEYWORDS":"",
+    "TILE_INFORMATION":""
    }
   ]
  },
@@ -100,6 +109,15 @@
     "TILE_KEYWORDS":"",
     "TILE_INFORMATION":"",
     "ALT_SMART_LINK_TITLE":"eSolutions - Outgoing Deliveries"
+   },
+   {
+    "APP_ID":"ZETR_OUTG_DLV_UI5R",
+    "LANGU":"T",
+    "TILE_TITLE":"eÇözümler - Giden İrsaliyeler",
+    "TILE_SUBTITLE":"",
+    "TILE_KEYWORDS":"",
+    "TILE_INFORMATION":"",
+    "ALT_SMART_LINK_TITLE":"eÇözümler - Giden İrsaliyeler"
    }
   ]
  },
@@ -127,8 +145,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2024-11-10",
-    "CHECK_DATE":"2024-11-10",
+    "CREATED_ON":"2024-11-12",
+    "CHECK_DATE":"2024-11-12",
     "CHECK_CFG":""
    }
   ]

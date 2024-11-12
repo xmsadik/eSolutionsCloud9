@@ -127,4 +127,5 @@
     rs_status-invno = ls_status-belgeno.
     rs_status-invui = ls_status-ettn.
     rs_status-invqi = ls_status-ettn.
+    rs_status-invii = ls_status-yerelbelgeoid.
   ENDMETHOD.

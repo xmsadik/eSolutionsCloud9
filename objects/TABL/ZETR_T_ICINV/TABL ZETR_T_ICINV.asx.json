@@ -100,7 +100,7 @@
     "DATATYPE":"CHAR",
     "LENG":1,
     "DECIMALS":0,
-    "DOMNAME":"ABAP_BOOLEAN",
+    "DOMNAME":"ZETR_D_ACCOK",
     "SHLPORIGIN":"F",
     "TABLETYPE":"",
     "DEPTH":0,

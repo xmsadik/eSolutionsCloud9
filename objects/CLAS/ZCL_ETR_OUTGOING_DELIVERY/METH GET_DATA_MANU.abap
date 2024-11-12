@@ -53,6 +53,7 @@
         INTO @ls_partner_data-stcd1.
       ls_partner_data-stcd2 = mv_company_taxid.
     ENDIF.
-    ms_outdel_data-taxid = COND #( WHEN ls_partner_data-stcd3 IS NOT INITIAL THEN ls_partner_data-stcd3 ELSE ls_partner_data-stcd2 ).
-    ms_outdel_data-tax_office = ls_partner_data-stcd1.
+    ms_manual_data-taxid = COND #( WHEN ls_partner_data-stcd3 IS NOT INITIAL THEN ls_partner_data-stcd3 ELSE ls_partner_data-stcd2 ).
+    ms_manual_data-tax_office = ls_partner_data-stcd1.
+    ms_manual_data-address_number = ls_partner_data-adrnr.
   ENDMETHOD.
